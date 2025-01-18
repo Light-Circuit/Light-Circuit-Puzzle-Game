@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float MoveSpeed;
 
-    private bool ÝsMoving;
+    private bool isMoving;
 
     private Vector2 input;
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        if (!ÝsMoving)
+        if (!isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        animator.SetBool("isMoivng", ÝsMoving);
+        animator.SetBool("isMoivng", isMoving);
 
 
     }
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Move(Vector3 targetPos)
     {
-        ÝsMoving = true;
+        isMoving = true;
 
         while((targetPos-transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = targetPos;
 
-        ÝsMoving = false;
+        isMoving = false;
     }
 
 
