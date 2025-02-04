@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mert.Input;
 
 public class PlayerController : MonoBehaviour
 {
     public float MoveSpeed;
+    private InputManager inputManager;
 
     private bool isMoving;
 
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        inputManager=GetComponent<InputManager>();
     }
 
     void Update()
@@ -27,19 +30,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!isMoving)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            input.x = inputManager.move.x;
+            input.y = inputManager.move.y;
 
-            //Debug.Log("this is input.x" + input.x);
-            //Debug.Log("this is input.y" + input.y);
-
-
-
-         //if (input.x > 0) 
-         //   { input.y = 0; }
-         //  else if (input.x < 0)
-         //   {  input.y = 0; }
-
+           
 
             if (input != Vector2.zero)
             {

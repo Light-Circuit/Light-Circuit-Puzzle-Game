@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1847,7 +1846,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1223928902162745097, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
       insertIndex: -1
       addedObject: {fileID: 279473211}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 922532892085818150, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1979022631}
+    - targetCorrespondingSourceObject: {fileID: 922532892085818150, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1979022630}
   m_SourcePrefab: {fileID: 100100000, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
 --- !u!1 &731727053 stripped
 GameObject:
@@ -4475,6 +4480,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1979022629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 922532892085818150, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
+  m_PrefabInstance: {fileID: 731727052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1979022630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979022629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822e18cbf3791489ba3e537f05ff61f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 1979022631}
+--- !u!114 &1979022631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979022629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 854307cb15ad14599ab64c782d10923b, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Move
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1997658480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4006277568018219461, guid: 9e0f38bdf0359d3448bf997893f12baf, type: 3}

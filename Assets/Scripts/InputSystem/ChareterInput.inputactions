@@ -1,0 +1,95 @@
+{
+    "name": "ChareterInput",
+    "maps": [
+        {
+            "name": "Move",
+            "id": "4e51f615-4b5b-4d05-b3c3-6dd2bf8d1931",
+            "actions": [
+                {
+                    "name": "PlayerMove",
+                    "type": "Value",
+                    "id": "86c766fa-95d5-4201-b47d-da93a42bdeed",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "df4bd3c6-542a-4f9f-bf62-1bf71099451c",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "240338fd-fdde-4433-9a5e-33960c4f3106",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pc",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1f6918a9-ec6e-4665-a787-2d98f5758cfd",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pc",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "6bf658f2-b33f-4f68-8caf-fd26112e8708",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pc",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5fd51fc3-91fb-437d-8d4a-1bc8c7acf935",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pc",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Pc",
+            "bindingGroup": "Pc",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
