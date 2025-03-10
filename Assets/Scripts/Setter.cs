@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Setter : MonoBehaviour
 {
-    [Header("Setterlar di�er devrelere,kablolara ve harici devrelere ba�lamak i�in")] 
+    [Header("Setterlar diğer devrelere,kablolara ve harici devrelere bağlamak için")]
     public Lever lever;
     public Devre devre;
     [Header("LEVER1 setter")]
@@ -16,11 +16,10 @@ public class Setter : MonoBehaviour
 
     public bool set;
 
-    
+    private bool lastState = false; // Önceki durumu saklar
 
     void Update()
     {
-       
         if (lever_)
         {
             set = lever._set;
@@ -28,6 +27,18 @@ public class Setter : MonoBehaviour
         if (devre_)
         {
             set = devre.devreSetter;
+        }
+
+        // 🔹 Eğer buton değiştiyse, buton sesi çal
+        if (set != lastState)
+        {
+            lastState = set; // Yeni durumu kaydet
+
+            // 🔹 Buton sesi çal (sadece AudioManager'daki buton sesi)
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayButtonSound();
+            }
         }
     }
 }
