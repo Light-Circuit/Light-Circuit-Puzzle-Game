@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class Setter : MonoBehaviour
 {
-    [Header("Setterlar diğer devrelere,kablolara ve harici devrelere bağlamak için")]
+    [Header("Setterlar diğer devrelere, kablolara ve harici devrelere bağlamak için")]
     public Lever lever;
     public Devre devre;
+
     [Header("LEVER1 setter")]
     public bool lever_1;
+
     [Header("LEVER setter")]
     public bool lever_;
+
     [Header("Devre setter")]
     public bool devre_;
 
     public bool set;
 
-    private bool lastState = false; // Önceki durumu saklar
+    private bool lastState = false;
+    private string setSource = ""; // "lever", "devre", "lever1" gibi
 
     void Update()
     {
+        // 🔍 Hangi kaynaktan "set" geldiğini belirle
         if (lever_)
         {
             set = lever._set;
+            setSource = "lever";
         }
-        if (devre_)
+        else if (lever_1)
+        {
+            set = lever._set;
+            setSource = "lever1";
+        }
+        else if (devre_)
         {
             set = devre.devreSetter;
+            setSource = "devre";
         }
 
-        // 🔹 Eğer buton değiştiyse, buton sesi çal
+        // ✅ Sadece LEVER'dan gelen değişikliklerde ses çal
         if (set != lastState)
         {
-            lastState = set; // Yeni durumu kaydet
+            lastState = set;
 
-            // 🔹 Buton sesi çal (sadece AudioManager'daki buton sesi)
-            if (AudioManager.instance != null)
+            if ((setSource == "lever" || setSource == "lever1") && AudioManager.instance != null)
             {
                 AudioManager.instance.PlayButtonSound();
             }

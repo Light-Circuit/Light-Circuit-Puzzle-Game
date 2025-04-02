@@ -13,7 +13,7 @@ public class Lever : MonoBehaviour
         if (LeverSET)
         {
             SetLever();
-        }
+        } 
     }
     void Touch()
     {

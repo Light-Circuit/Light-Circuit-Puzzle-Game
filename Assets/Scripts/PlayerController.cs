@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMove();
     }
-
+    
     void PlayerMove()
     {
         if (!isMoving)
@@ -38,9 +38,9 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
-                animator.SetBool("isMoving", true); // 🔹 HAREKET BAŞLAYINCA ANİMASYONU AKTİF ET
+                animator.SetFloat("MoveX", input.x);
+                animator.SetFloat("MoveY", input.y);
+                animator.SetBool("isMoving", true); //  HAREKET BAŞLAYINCA ANİMASYONU AKTİF ET
 
                 var TargetPos = transform.position;
                 TargetPos.x += input.x;

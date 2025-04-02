@@ -30,7 +30,7 @@ public class Logic : MonoBehaviour
 
             if (AudioManager.instance != null)
             {
-                AudioManager.instance.PlayCircuitConnectSound(); // **Sadece devre sesi çalacak**
+                //AudioManager.instance.PlayCircuitConnectSound(); // **Sadece devre sesi çalacak**
             }
         }
     }
@@ -79,10 +79,10 @@ public class Logic : MonoBehaviour
         {
             lastResult = result;
 
-            if (AudioManager.instance != null)
-            {
-                AudioManager.instance.PlayCircuitConnectSound(); // **Buton sesi deðil, devre sesi çalacak**
-            }
+            //if (AudioManager.instance != null)
+            //{
+            //    AudioManager.instance.PlayCircuitConnectSound(); // **Buton sesi deðil, devre sesi çalacak**
+            //}
         }
     }
 }
