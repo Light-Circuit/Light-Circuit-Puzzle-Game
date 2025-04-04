@@ -52,6 +52,7 @@ public class Panel : MonoBehaviour
         foreach (var item in _gate)
         {
             item.SetActive(false);
+            SocketSound();
         }
 
 
@@ -77,6 +78,7 @@ public class Panel : MonoBehaviour
             Debug.Log(" kare ");
             closed();
             _gate[0].SetActive(true);
+            SocketSound();
 
 
         }
@@ -85,12 +87,14 @@ public class Panel : MonoBehaviour
             Debug.Log(" x ");
             closed();
             _gate[1].SetActive(true);
+            SocketSound();
         }
         if (Input.GetButtonDown("Fire3"))
         {
             Debug.Log(" daire ");
             closed();
             _gate[2].SetActive(true);
+            SocketSound();
         }
         if (Input.GetButtonDown("Jump"))
         {
@@ -103,5 +107,9 @@ public class Panel : MonoBehaviour
 
     }
 
+    public void SocketSound()
+    {
+        AudioManager.instance.PlayCircuitConnectSound();
+    }
 
 }
