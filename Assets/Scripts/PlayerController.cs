@@ -24,23 +24,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-<<<<<<< HEAD
+
         PlayerMove();
     }
     
     void PlayerMove()
     {
         if (!isMoving)
-=======
+
         if (!isMoving) // Eğer hareket etmiyorsa giriş al
->>>>>>> 25b00a8 (tamamlama)
+
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
             if (input != Vector2.zero) // Eğer giriş varsa hareket et
             {
-<<<<<<< HEAD
+
                 animator.SetFloat("MoveX", input.x);
                 animator.SetFloat("MoveY", input.y);
                 animator.SetBool("isMoving", true); //  HAREKET BAŞLAYINCA ANİMASYONU AKTİF ET
@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
                     audioSource.clip = AudioManager.instance.WalkSound;
                     audioSource.Play();
                 }
-=======
+
                 StartMoving();
->>>>>>> 25b00a8 (tamamlama)
+
             }
             else
             {
