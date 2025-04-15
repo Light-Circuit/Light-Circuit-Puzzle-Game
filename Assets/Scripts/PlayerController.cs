@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float MoveSpeed;
-
+    public float MoveSpeed = 5f; // Varsayılan hız
     private bool isMoving;
     private Vector2 input;
     private Animator animator;
@@ -26,18 +24,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         PlayerMove();
     }
     
     void PlayerMove()
     {
         if (!isMoving)
+
+        if (!isMoving) // Eğer hareket etmiyorsa giriş al
+
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
-            if (input != Vector2.zero)
+            if (input != Vector2.zero) // Eğer giriş varsa hareket et
             {
+
                 animator.SetFloat("MoveX", input.x);
                 animator.SetFloat("MoveY", input.y);
                 animator.SetBool("isMoving", true); //  HAREKET BAŞLAYINCA ANİMASYONU AKTİF ET
@@ -53,24 +56,46 @@ public class PlayerController : MonoBehaviour
                     audioSource.clip = AudioManager.instance.WalkSound;
                     audioSource.Play();
                 }
+
+                StartMoving();
+
             }
             else
             {
-                animator.SetBool("isMoving", false); // 🔹 HAREKET DURUNCA ANİMASYONU KAPAT
-                isMoving = false;
-
-                if (audioSource.isPlaying)
-                {
-                    audioSource.Stop();
-                }
+                StopMoving();
             }
+        }
+    }
+
+    void StartMoving()
+    {
+        animator.SetFloat("moveX", input.x);
+        animator.SetFloat("moveY", input.y);
+        animator.SetBool("isMoving", true);
+
+        Vector3 targetPos = transform.position + new Vector3(input.x, input.y, 0);
+        StartCoroutine(Move(targetPos));
+
+        if (!audioSource.isPlaying && AudioManager.instance != null)
+        {
+            audioSource.clip = AudioManager.instance.WalkSound;
+            audioSource.Play();
+        }
+    }
+
+    void StopMoving()
+    {
+        animator.SetBool("isMoving", false);
+
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 
     IEnumerator Move(Vector3 targetPos)
     {
         isMoving = true;
-        animator.SetBool("isMoving", true); // 🔹 ANİMASYONU BAŞLAT
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -80,11 +105,10 @@ public class PlayerController : MonoBehaviour
 
         transform.position = targetPos;
         isMoving = false;
-        animator.SetBool("isMoving", false); // 🔹 ANİMASYONU DURDUR
 
-        if (audioSource.isPlaying)
+        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
-            audioSource.Stop();
+            StopMoving();
         }
     }
 }
