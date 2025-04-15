@@ -1322,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mert
       objectReference: {fileID: 0}
+    - target: {fileID: 1154502310861436357, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1223928902162745097, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.54
