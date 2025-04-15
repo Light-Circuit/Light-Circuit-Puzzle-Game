@@ -8,6 +8,7 @@ public class LevyerDetector : MonoBehaviour
     private bool canInteract = false;
     public GameObject x;
     public Lever lever;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

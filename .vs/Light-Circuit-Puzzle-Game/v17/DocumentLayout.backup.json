@@ -7,23 +7,23 @@
       "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|c:\\games\\light-circuit-puzzle-game\\assets\\scripts\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|C:\\Games\\Light-Circuit-Puzzle-Game\\assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|C:\\Games\\Light-Circuit-Puzzle-Game\\assets\\scripts\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|C:\\Games\\Light-Circuit-Puzzle-Game\\assets\\scripts\\setter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|c:\\games\\light-circuit-puzzle-game\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|C:\\Games\\Light-Circuit-Puzzle-Game\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|c:\\games\\light-circuit-puzzle-game\\assets\\scripts\\devre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|C:\\Games\\Light-Circuit-Puzzle-Game\\assets\\scripts\\devre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F38538B-65CF-FFD9-A605-579D3467C414}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\devre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,14 +44,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Panel.cs",
               "ToolTip": "C:\\Games\\Light-Circuit-Puzzle-Game\\Assets\\Scripts\\Panel.cs",
               "RelativeToolTip": "Assets\\Scripts\\Panel.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwEAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T15:43:21.617Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Logic.cs",
               "DocumentMoniker": "C:\\Games\\Light-Circuit-Puzzle-Game\\Assets\\Scripts\\Logic.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Logic.cs",
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Logic.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T15:31:58.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T15:31:58.342Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwBIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T15:30:11.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T15:30:11.941Z"
             },
             {
               "$type": "Document",
@@ -85,18 +83,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Setter.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAswDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T12:49:31.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T12:49:31.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Games\\Light-Circuit-Puzzle-Game\\Assets\\Scripts\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManager.cs",
               "ToolTip": "C:\\Games\\Light-Circuit-Puzzle-Game\\Assets\\Scripts\\AudioManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\AudioManager.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA+wGQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAlwFYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T12:45:59.004Z",
               "EditorCaption": ""
@@ -111,8 +108,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Devre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T12:40:33.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T12:40:33.556Z"
             }
           ]
         }
