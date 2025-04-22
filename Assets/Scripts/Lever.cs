@@ -9,36 +9,36 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        Touch();
+        // Touch();
         if (LeverSET)
         {
             SetLever();
         }
     }
-    void Touch()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero);
-            if (hit.collider != null)
-            {
-                Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.gameObject == _leverClosed)
-                {
-                    _set = true;
+    // void Touch()
+    // {
+    //     // if (Input.GetMouseButtonDown(0))
+    //     // {
+    //     //     Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //     //     RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero);
+    //     //     if (hit.collider != null)
+    //     //     {
+    //     //         Debug.Log(hit.collider.gameObject.name);
+    //     //         if (hit.collider.gameObject == _leverClosed)
+    //     //         {
+    //     //             _set = true;
 
 
-                }
-                else if (hit.collider.gameObject == _leverOpened)
-                {
-                    _set = false;
+    //     //         }
+    //     //         else if (hit.collider.gameObject == _leverOpened)
+    //     //         {
+    //     //             _set = false;
 
 
-                }
-            }
-        }
-    }
+    //     //         }
+    //     //     }
+    //     // }
+    // }
 
     void SetLever()
     {

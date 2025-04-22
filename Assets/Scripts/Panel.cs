@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using Mert.Input;
 
 public class Panel : MonoBehaviour
 {
     [Header("and,or,not,xor")]
     [Header("# x o A")]
     public GameObject[] _gate;
+    private InputManager input;
+    void Start()
+    {
+      input=FindAnyObjectByType<InputManager>();  
+    }
     private void Update()
     {
         GamePad();
@@ -72,7 +78,7 @@ public class Panel : MonoBehaviour
     {
 
         //kare x o ??gen0
-        if (Input.GetButtonDown("Fire1"))
+        if (input.KeyOne)
         {
             Debug.Log(" kare ");
             closed();
@@ -80,19 +86,19 @@ public class Panel : MonoBehaviour
 
 
         }
-        if (Input.GetButtonDown("Fire2"))
+        if (input.keyTwo)
         {
             Debug.Log(" x ");
             closed();
             _gate[1].SetActive(true);
         }
-        if (Input.GetButtonDown("Fire3"))
+        if (input.keyThree)
         {
             Debug.Log(" daire ");
             closed();
             _gate[2].SetActive(true);
         }
-        if (Input.GetButtonDown("Jump"))
+        if (input.keyCancel)
         {
             Debug.Log("ucgen");
             closed();

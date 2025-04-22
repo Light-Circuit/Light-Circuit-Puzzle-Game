@@ -1817,6 +1817,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bc314f1678466ca4b91b7dd1f35eaae8, type: 3}
+    - target: {fileID: 6000213332809387256, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1979022631}
     - target: {fileID: 6014177231769597977, guid: 9994c0f76fa4a8246a5c6e236526a522, type: 3}
       propertyPath: _gate.Array.size
       value: 3

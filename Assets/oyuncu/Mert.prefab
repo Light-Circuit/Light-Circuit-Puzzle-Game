@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 1154502310861436357}
   - component: {fileID: 2344578124417963445}
   - component: {fileID: 8268918663694038902}
+  - component: {fileID: 3360783863036396102}
+  - component: {fileID: 6000213332809387256}
   m_Layer: 0
   m_Name: Mert
   m_TagString: Player
@@ -280,6 +282,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9667077, y: 1.3607913}
   m_EdgeRadius: 0
+--- !u!114 &3360783863036396102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922532892085818150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 854307cb15ad14599ab64c782d10923b, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 86c766fa-95d5-4201-b47d-da93a42bdeed
+    m_ActionName: Move/PlayerMove[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c999bc8-20bf-4a50-8817-1c92a3d89931
+    m_ActionName: Move/KeyE[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b618910-c03a-43ec-be7d-6208384e9bf0
+    m_ActionName: Move/Key1[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1eea694-4c1b-4609-85da-1a085c84e0bf
+    m_ActionName: Move/Key2[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5fce8bc-207b-4897-9bac-0425d54e9b53
+    m_ActionName: Move/Key3[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25da8487-16eb-4db9-981e-56ec910b31b8
+    m_ActionName: Move/Cancel[/Keyboard/x]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Pc
+  m_DefaultActionMap: Move
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &6000213332809387256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922532892085818150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822e18cbf3791489ba3e537f05ff61f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 3360783863036396102}
 --- !u!1001 &2715333257046927565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,6 +365,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2612358933953359466, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 64264c89f72d86a40b0e51fe136c4bfa, type: 3}
     - target: {fileID: 4314985884827992468, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60820544
@@ -350,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6439793376412021450, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.233
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7949201090583231739, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
       propertyPath: m_LocalScale.x
@@ -360,8 +433,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.285
       objectReference: {fileID: 0}
+    - target: {fileID: 8563712777590952148, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
+      propertyPath: _gate.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192140077370554305, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
+      propertyPath: m_Name
+      value: or
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192140077370554305, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
+      propertyPath: m_TagString
+      value: or_gate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8476046018202775851, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
+    - {fileID: 4844491557291052407, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bf4507b18cd44979f1118614efe3, type: 3}
