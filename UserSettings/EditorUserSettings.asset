@@ -27,6 +27,7 @@ EditorUserSettings:
       value: 510057050705515a0e0f0f2344270d444e164a7d7d7972637c714b62e7e5366d
       flags: 0
     RecentlyUsedSceneGuid-7:
+<<<<<<< HEAD
       value: 5b52575350025f0c5e590d7040775a48434f4b72792b72667e2f1836b1b1356a
       flags: 0
     RecentlyUsedSceneGuid-8:
@@ -35,6 +36,16 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-9:
       value: 525555565d035f025957547716200f4444154a797e782434292d4f65b5e3356e
       flags: 0
+=======
+      value: 56535157515658085e570f2743250844104e407c2f7975602b7d1b32e6e26d68
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 525555565d035f025957547716200f4444154a797e782434292d4f65b5e3356e
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 5b52575350025f0c5e590d7040775a48434f4b72792b72667e2f1836b1b1356a
+      flags: 0
+>>>>>>> origin/RevizeDenemesi_version(0.1)
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0

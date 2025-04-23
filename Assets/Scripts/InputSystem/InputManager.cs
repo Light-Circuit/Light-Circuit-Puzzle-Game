@@ -35,14 +35,14 @@ namespace Mert.Input
 
             moveAction = currentInputMaps.FindAction("PlayerMove");
             keyEaction = currentInputMaps.FindAction("KeyE");
-            keyOneAction = currentInputMaps.FindAction("Key1");
+            keyOneAction = currentInputMaps.FindAction("KeyX");
             keyTwoAction = currentInputMaps.FindAction("Key2");
             keyThreeAction = currentInputMaps.FindAction("Key3");
             keyCancelAction = currentInputMaps.FindAction("Cancel");
 
             moveAction.performed += OnMove;
             moveAction.canceled += OnMove;
-            moveAction.Enable();
+            // moveAction.Enable();
 
             keyEaction.performed += ctx => keyEPressed = ctx.performed;
             keyEaction.Enable();

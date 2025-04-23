@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Setter : MonoBehaviour
 {
-    [Header("Setterlar diðer devrelere,kablolara ve harici devrelere baðlamak için")] 
+    [Header("Setterlar diï¿½er devrelere,kablolara ve harici devrelere baglamak icin")] 
     public Lever lever;
     public Devre devre;
     [Header("LEVER1 setter")]

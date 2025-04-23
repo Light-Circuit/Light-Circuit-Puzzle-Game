@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mert.Input;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,34 +27,35 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void PlayerMove()
+    private Coroutine moveCoroutine; 
+
+void PlayerMove()
+{
+    input.x = inputManager.move.x;
+    input.y = inputManager.move.y;
+
+    if (input != Vector2.zero && !isMoving)
     {
-        if (!isMoving)
-        {
-            input.x = inputManager.move.x;
-            input.y = inputManager.move.y;
+        animator.SetFloat("moveX", input.x);
+        animator.SetFloat("MoveY", input.y);
 
-           
+        var TargetPos = transform.position + new Vector3(input.x, input.y, 0f);
 
-            if (input != Vector2.zero)
-            {
+        if (moveCoroutine != null)
+            StopCoroutine(moveCoroutine); 
 
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("MoveY", input.y);
-
-                var TargetPos = transform.position;
-                TargetPos.x += input.x;
-                TargetPos.y += input.y;
-
-
-                StartCoroutine(Move(TargetPos));
-
-            }
-        }
-        animator.SetBool("isMoivng", isMoving);
-
-
+        moveCoroutine = StartCoroutine(Move(TargetPos));
     }
+    else if (input == Vector2.zero && moveCoroutine != null)
+    {
+        StopCoroutine(moveCoroutine); 
+        moveCoroutine = null;
+        isMoving = false;
+    }
+
+    animator.SetBool("isMoivng", isMoving); 
+}
+
 
 
     IEnumerator Move(Vector3 targetPos)
