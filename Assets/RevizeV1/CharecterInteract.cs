@@ -11,7 +11,8 @@ public class CharacterInteract : MonoBehaviour
     private LevyerDetectorm levyerInteract;
     private IBaseSocet SocetInteract;
     private bool canInteract = false;
-    private bool hasInteracted = false;
+    // private bool hasInteracted = false;
+
 
     private InputManager inputManager;
 
