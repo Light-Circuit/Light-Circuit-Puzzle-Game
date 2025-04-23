@@ -2,8 +2,4 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnvanterSystem : MonoBehaviour
-{
- 
-
-}
+public class DefaultSocet :  Socet {} 

@@ -68,13 +68,11 @@ private void Update()
         Debug.Log("E ye basıyom");
         HandleLevyerInteraction();
         HandleSocetAddInteraction();
-
     }
     if(inputManager.KeyOne)
     {
         Debug.Log("X tuşuna basıyorum");
         HandleSocetRemoveInteraction();
-
     }
    
 }
@@ -89,12 +87,13 @@ private void HandleLevyerInteraction()
 private void HandleSocetAddInteraction()
 {
     if (SocetInteract == null || selector.selectedObject == null) return;
-    SocetInteract.AddLogic(selector.selectedObject.GetComponent<KeyGate>().keyBinding.Id);
+        if(SocetInteract is Socet)
+        SocetInteract.AddLogic(selector.selectedObject.GetComponent<KeyGate>().keyBinding.Id);
 }
 private void HandleSocetRemoveInteraction()
 {
     if (SocetInteract == null ) return;
-    SocetInteract.RemoveLogic();
+        SocetInteract.RemoveLogic();
 }
 
 
