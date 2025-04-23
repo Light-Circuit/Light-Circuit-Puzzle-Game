@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Key1",
+                    "name": "KeyX",
                     "type": "Button",
                     "id": "3b618910-c03a-43ec-be7d-6208384e9bf0",
                     "expectedControlType": "Button",
@@ -152,11 +152,11 @@
                 {
                     "name": "",
                     "id": "5dde6062-6cd4-4c30-88fa-bcd7ab62f5b6",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Key1",
+                    "action": "KeyX",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

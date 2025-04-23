@@ -8,7 +8,7 @@ public class Logic : MonoBehaviour
 {
     public string gateName;
     public bool result;
-    public Setter[] setter;
+    public BaseSet[] setter;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class Logic : MonoBehaviour
 
     private void Update()
     {
-        Gate(gateName, setter[0].set, setter[1].set);
+        Gate(gateName, setter[0].GetSet(), setter[1].GetSet());
         Result();
     }
 

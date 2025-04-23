@@ -4,20 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - UIdetector
-  - yesil
-  - kirmizi
-  - and_gate
-  - or_gate
-  - not_gate
-  - nand_gate
-  - nor_gate
-  - xor_gate
-  - delete_gate
   - leverClosed
-  - leverOpened
-  - leverOpened1
-  - leverClosed1
+  - LevyerDetector
+  - Lever
+  - Socet
+  - or_gate
+  - delete_gate
   layers:
   - Default
   - TransparentFX
