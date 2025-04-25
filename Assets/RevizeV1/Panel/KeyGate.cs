@@ -5,5 +5,7 @@ using UnityEngine;
 
 public class KeyGate : MonoBehaviour
 {
-    public GateClass keyBinding;
+    
+    public KeyClass keyBinding;
+    public bool isActive;
 }

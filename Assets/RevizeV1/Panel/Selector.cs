@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Selector : MonoBehaviour
-{
+{   
     public List<GameObject> Keys = new List<GameObject>(); 
     private int selectedIndex = 0;
     public GameObject selectedObject;
@@ -17,7 +17,7 @@ public class Selector : MonoBehaviour
     }
 
     void HandleInput()
-    {
+    {//InputManeger
         int currentRow = selectedIndex / columns;
         int currentCol = selectedIndex % columns;
 
@@ -49,6 +49,7 @@ public class Selector : MonoBehaviour
             var selectedObj = Keys[selectedIndex];
             selectedObj.GetComponent<SpriteRenderer>().color = Color.yellow;
             selectedObject=selectedObj;
+            
           
         }
     }

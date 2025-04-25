@@ -1,6 +1,10 @@
 using UnityEngine;
 public interface IBaseSocet
 {
-    void AddLogic(int id);
-    void RemoveLogic();
+   public void SocetRule();
+   public void AddLogic(int id);
+   public void RemoveLogic();
+   public int Collect();
+   public bool GateAviable();
+
 }

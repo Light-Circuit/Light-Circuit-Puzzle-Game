@@ -3,14 +3,17 @@ using UnityEngine;
 public class Levyer : BaseSet
 {
     // public bool _set;
-    public GameObject _leverClosed;
-    public GameObject _leverOpened;
+    public Sprite _leverClosed;
+    public Sprite _leverOpened;
+    [Header("bunu kapatırsan lever basılabilir olmaz")]
     public bool Lever_set;
    private LevyerDetectorm detector;
+   private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         detector=GetComponent<LevyerDetectorm>();
+        spriteRenderer=GetComponent<SpriteRenderer>(); 
     }
     private void Update()
     {
@@ -26,13 +29,11 @@ public class Levyer : BaseSet
     {
         if (detector.GetEnter())
         {
-            _leverClosed.SetActive(false);
-            _leverOpened.SetActive(true);
+            spriteRenderer.sprite=_leverOpened;
         }
         else
         {
-            _leverOpened.SetActive(false);
-            _leverClosed.SetActive(true);
+           spriteRenderer.sprite=_leverClosed;
         }
 
     }
