@@ -7,96 +7,79 @@ namespace Player.Input
     public class InputManager : MonoBehaviour
     {
         [SerializeField] private PlayerInput playerInput;
-        private InputActionMap currentInputMaps;
+        private InputActionMap currentInputMap;
 
         private InputAction moveAction;
-        private InputAction keyEaction;
-        private InputAction keyOneAction;
-        private InputAction keyTwoAction;
-        private InputAction keyThreeAction;
-        private InputAction keyCancelAction;
+        private InputAction keyEAction;
+        private InputAction upAction;
+        private InputAction downAction;
+        private InputAction leftAction;
+        private InputAction rightAction;
 
         public Vector2 move { get; private set; }
         public bool KeyE { get; private set; }
-        public bool KeyOne { get; private set; }
-        public bool keyTwo { get; private set; }
-        public bool keyThree { get; private set; }
-        public bool keyCancel { get; private set; }
+        public bool RightArrowPressed { get; private set; }
+        public bool LeftArrowPressed { get; private set; }
+        public bool UpArrowPressed { get; private set; }
+        public bool DownArrowPressed { get; private set; }
 
         private bool keyEPressed;
-        private bool keyOnePressed;
-        private bool keyTwoPressed;
-        private bool keyThreePressed;
-        private bool keyCancelPressed;
+        private bool rightPressed;
+        private bool leftPressed;
+        private bool upPressed;
+        private bool downPressed;
 
         void Start()
         {
-            currentInputMaps = playerInput.currentActionMap;
+            currentInputMap = playerInput.currentActionMap;
 
-            moveAction = currentInputMaps.FindAction("PlayerMove");
-            keyEaction = currentInputMaps.FindAction("KeyE");
-            keyOneAction = currentInputMaps.FindAction("KeyX");
-            keyTwoAction = currentInputMaps.FindAction("Key2");
-            keyThreeAction = currentInputMaps.FindAction("Key3");
-            keyCancelAction = currentInputMaps.FindAction("Cancel");
+            moveAction = currentInputMap.FindAction("PlayerMove");
+            keyEAction = currentInputMap.FindAction("KeyE");
+            upAction = currentInputMap.FindAction("Up");
+            downAction = currentInputMap.FindAction("Down");
+            leftAction = currentInputMap.FindAction("Left");
+            rightAction = currentInputMap.FindAction("Right");
 
             moveAction.performed += OnMove;
             moveAction.canceled += OnMove;
-            // moveAction.Enable();
 
-            keyEaction.performed += ctx => keyEPressed = ctx.performed;
-            keyEaction.Enable();
+            keyEAction.performed += ctx => keyEPressed = ctx.performed;
+            upAction.performed += ctx => upPressed = ctx.performed;
+            downAction.performed += ctx => downPressed = ctx.performed;
+            leftAction.performed += ctx => leftPressed = ctx.performed;
+            rightAction.performed += ctx => rightPressed = ctx.performed;
 
-            keyOneAction.performed += ctx => keyOnePressed = ctx.performed;
-            keyOneAction.Enable();
-
-            keyTwoAction.performed += ctx => keyTwoPressed = ctx.performed;
-            keyTwoAction.Enable();
-
-            keyThreeAction.performed += ctx => keyThreePressed = ctx.performed;
-            keyThreeAction.Enable();
-
-            keyCancelAction.performed += ctx => keyCancelPressed = ctx.performed;
-            keyCancelAction.Enable();
+            keyEAction.Enable();
+            upAction.Enable();
+            downAction.Enable();
+            leftAction.Enable();
+            rightAction.Enable();
         }
 
         void Update()
         {
             HandleKeyE();
-            HandleKeyOne();
-            HandleKeyTwo();
-            HandleKeyThree();
-            HandleKeyCancel();
+            HandleDirectionKeys();
         }
 
         private void HandleKeyE()
         {
             KeyE = keyEPressed;
-            keyEPressed = false;  
+            keyEPressed = false;
         }
 
-        private void HandleKeyOne()
+        private void HandleDirectionKeys()
         {
-            KeyOne = keyOnePressed;
-            keyOnePressed = false;
-        }
+            RightArrowPressed = rightPressed;
+            LeftArrowPressed = leftPressed;
+            UpArrowPressed = upPressed;
+            DownArrowPressed = downPressed;
 
-        private void HandleKeyTwo()
-        {
-            keyTwo = keyTwoPressed;
-            keyTwoPressed = false;
-        }
-
-        private void HandleKeyThree()
-        {
-            keyThree = keyThreePressed;
-            keyThreePressed = false;
-        }
-
-        private void HandleKeyCancel()
-        {
-            keyCancel = keyCancelPressed;
-            keyCancelPressed = false;
+            // Reset the pressed states after handling them
+            rightPressed = false;
+            leftPressed = false;
+            upPressed = false;
+            downPressed = false;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -109,13 +92,17 @@ namespace Player.Input
             moveAction.performed -= OnMove;
             moveAction.canceled -= OnMove;
 
-            keyEaction.performed -= ctx => keyEPressed = ctx.performed;
-            keyOneAction.performed -= ctx => keyOnePressed = ctx.performed;
-            keyTwoAction.performed -= ctx => keyTwoPressed = ctx.performed;
-            keyThreeAction.performed -= ctx => keyThreePressed = ctx.performed;
-            keyCancelAction.performed -= ctx => keyCancelPressed = ctx.performed;
-        }
+            keyEAction.performed -= ctx => keyEPressed = ctx.performed;
+            upAction.performed -= ctx => upPressed = ctx.performed;
+            downAction.performed -= ctx => downPressed = ctx.performed;
+            leftAction.performed -= ctx => leftPressed = ctx.performed;
+            rightAction.performed -= ctx => rightPressed = ctx.performed;
 
-       
+            keyEAction.Disable();
+            upAction.Disable();
+            downAction.Disable();
+            leftAction.Disable();
+            rightAction.Disable();
+        }
     }
 }

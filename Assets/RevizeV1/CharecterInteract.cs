@@ -118,6 +118,9 @@ public class CharacterInteract : MonoBehaviour
                     HandleSocetAddInteraction();
             }
         }
+        
+
+
         //panel üzerinde silme işlemi kaldırıldı
         // if (inputManager.KeyOne)
         // {

@@ -1,15 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using Player.Input;
 public class Selector : MonoBehaviour
 {   
     public List<GameObject> Keys = new List<GameObject>(); 
     private int selectedIndex = 0;
     public GameObject selectedObject;
-
+    InputManager input;
     private const int columns = 4; 
-    private const int rows = 2;    
+    private const int rows = 2;
 
+    void Awake()
+    {
+        input=FindAnyObjectByType<InputManager>();
+    }
     void Update()
     {
         HandleInput();
@@ -21,16 +25,16 @@ public class Selector : MonoBehaviour
         int currentRow = selectedIndex / columns;
         int currentCol = selectedIndex % columns;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (input.RightArrowPressed)
             currentCol = (currentCol + 1) % columns;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (input.LeftArrowPressed)
             currentCol = (currentCol + columns - 1) % columns;
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (input.DownArrowPressed)
             currentRow = Mathf.Min(currentRow + 1, rows - 1);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (input.UpArrowPressed)
             currentRow = Mathf.Max(currentRow - 1, 0);
 
         selectedIndex = currentRow * columns + currentCol;

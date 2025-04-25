@@ -5,35 +5,30 @@ using UnityEngine;
 
 public class KeyGate : MonoBehaviour
 {
-    
     public KeyClass keyBinding;
-   public TextMesh textStok;
-   public bool isDeactive;
-    private SpriteRenderer spriteRenderer;
+    public TextMesh textStok;
+    public bool isDeactive;
+    private Material material;
+
     void Start()
     {
-        textStok=transform.GetChild(0).GetComponent<TextMesh>();
-        spriteRenderer=GetComponent<SpriteRenderer>();
+        textStok = transform.GetChild(0).GetComponent<TextMesh>();
+
+       
+        material = GetComponent<Renderer>().material;
     }
 
-    void Update()
+    public void Sondur(float alpha)
     {
-        Sondur();
+        if (material != null)
+        {
+            Color c = material.color;
+            material.color = new Color(c.r, c.g, c.b, alpha); 
+        }
     }
-    public void Sondur()
-    {
-       if (isDeactive) 
-       {
-           spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
-           
-       }   
-       else
-       {
-           spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
-           
-       }
-    }
-    
-
-    
 }
+
+   
+
+    
+

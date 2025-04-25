@@ -9,42 +9,36 @@ public class EnvanterSystem : MonoBehaviour
 
 public StockClass[] stocks;
 public KeyGate[] keys;
-
+Material material;
 
 
     void Update()
     {
       KeysStockText();  
-      KeySondur();
+     Sondur();
     }
 
-    public void KeySondur()
+   public void Sondur()
 {
-    foreach (var keynot in keys)
-    { 
-        if (keynot.textStok != null)
+    foreach (var keytext in keys)
+    {
+        if (keytext.textStok != null)
         {
-          
-            foreach (var stock in stocks) 
+            foreach (var stocktext in stocks)
             {
-                if (stock.Id == keynot.keyBinding.Id)
+                if (stocktext.Id == keytext.keyBinding.Id)
                 {
-                   
-                    if (stock.stock == 0)
-                    {
-                        
-                        keynot.isDeactive=true;
-                    }
-                    else
-                    {
-                       
-                        keynot.isDeactive=false;
-                    }
+                    // Stock 0 ise alpha = 0.5, değilse alpha = 1
+                    float alpha = stocktext.stock == 0 ? 0.5f : 1f;
+                    keytext.Sondur(alpha); // Her KeyGate objesinin alpha değerini güncelle
+                    break;
                 }
-            }     
+            }
         }
     }
 }
+
+
 
     public void KeysStockText()
     {
