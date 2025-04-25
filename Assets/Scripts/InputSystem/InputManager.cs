@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Mert.Input
+namespace Player.Input
 {
     public class InputManager : MonoBehaviour
     {

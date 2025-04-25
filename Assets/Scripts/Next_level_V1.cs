@@ -5,22 +5,22 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     
-    public Till sonuc_kablo; 
-    public GameObject finish; 
+    // // public Till sonuc_kablo; 
+    // public GameObject finish; 
 
-    private void Update()
-    {
+    // private void Update()
+    // {
        
-        if (sonuc_kablo.set.set)
-        {
-            finish.SetActive(true);
-            Debug.Log("sonraki bölüme geç");
+    //     if (sonuc_kablo.set.set)
+    //     {
+    //         finish.SetActive(true);
+    //         Debug.Log("sonraki bï¿½lï¿½me geï¿½");
 
-        }
-        else
-        {
-            finish.SetActive(false);
-            Debug.Log("sonraki bölüme geçme");
-        }
-    }
+    //     }
+    //     else
+    //     {
+    //         finish.SetActive(false);
+    //         Debug.Log("sonraki bï¿½lï¿½me geï¿½me");
+    //     }
+    // }
 }

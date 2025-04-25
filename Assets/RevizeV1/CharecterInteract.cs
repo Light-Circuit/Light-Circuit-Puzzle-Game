@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mert.Input;
-using Unity.VisualScripting;
+using Player.Input;
+
 
 
 public class CharacterInteract : MonoBehaviour

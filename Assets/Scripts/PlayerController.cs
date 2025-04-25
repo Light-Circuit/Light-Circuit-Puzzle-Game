@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mert.Input;
+using Player.Input;
 using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
 
     private Animator animator;
+    private Coroutine moveCoroutine; 
    
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private Coroutine moveCoroutine; 
+  
 
 void PlayerMove()
 {
