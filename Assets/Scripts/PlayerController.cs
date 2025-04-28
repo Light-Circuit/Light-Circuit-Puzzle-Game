@@ -5,7 +5,8 @@ using Player.Input;
 using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
-{
+{   
+    private AudioManager manager;
     public float MoveSpeed;
     private InputManager inputManager;
 
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         inputManager=GetComponent<InputManager>();
+        manager=FindAnyObjectByType<AudioManager>();
+       
     }
 
     void Update()
@@ -63,6 +66,7 @@ void PlayerMove()
     {
         isMoving = true;
 
+        manager.WalkSound();
         while((targetPos-transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed*Time.deltaTime);
