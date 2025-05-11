@@ -1,0 +1,48 @@
+{"GameObjects":[
+    {
+      "id": 0,
+      "name": "AND",
+      "description": "Tüm girişler 1 olduğunda çıkış 1 olur. Aksi takdirde çıkış 0'dır."
+    },
+    {
+      "id": 1,
+      "name": "OR",
+      "description": "Girişlerden en az biri 1 ise çıkış 1 olur. Tüm girişler 0 ise çıkış 0'dır."
+    },
+    {
+      "id": 2,
+      "name": "NOT",
+      "description": "Tek girişli kapıdır. Giriş 0 ise çıkış 1, giriş 1 ise çıkış 0 olur."
+    },
+    {
+      "id": 3,
+      "name": "XOR",
+      "description": "Girişler birbirinden farklıysa çıkış 1 olur. Aynıysa çıkış 0'dır."
+    },
+    {
+      "id": 4,
+      "name": "XNOR",
+      "description": "Girişler aynıysa çıkış 1 olur. Farklıysa çıkış 0'dır."
+    },
+    {
+      "id": 5,
+      "name": "NAND",
+      "description": "AND kapısının tersidir. Tüm girişler 1 olduğunda çıkış 0 olur, diğer durumlarda 1 olur."
+    },
+    {
+      "id": 6,
+      "name": "BUF",
+      "description": "Buffer kapısı, giriş değerini doğrudan çıkışa verir. Hiçbir mantıksal işlem yapmaz."
+    },
+    {
+      "id": 7,
+      "name": "NOR",
+      "description": "OR kapısının tersidir. Tüm girişler 0 olduğunda çıkış 1 olur, diğer durumlarda 0 olur."
+    },
+    {
+      "id": 8,
+      "name": "Player",
+      "description": "cdscsdcscdscssdcscsccdscsdcds"
+    }
+  ]
+}

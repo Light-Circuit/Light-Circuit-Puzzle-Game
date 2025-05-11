@@ -2,68 +2,86 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Player.Input;
-
-
+using System.Net.Sockets;
 
 public class CharacterInteract : MonoBehaviour
 {
     public GameObject x;
+    public GameObject OgreticiPanel;
     private AudioManager manager;
     public GameObject panel;
-    public Selector selector;
+    public GameObject BufandNotPanel;
+    private Selector selector;
     private LevyerDetectorm levyerInteract;
     private IBaseSocet SocetInteract;
     private EnvanterSystem envanter;
     private bool canInteract = false;
-   
+    [HideInInspector]public bool isTutorialActive = false;
+    private bool tutorialShown = false;
 
+    [HideInInspector] public Tutorial _tutorials;
 
     private InputManager inputManager;
 
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
-       
     }
+
     void Start()
     {
-         envanter=GetComponent<EnvanterSystem>();
-         manager=FindAnyObjectByType<AudioManager>();
+        envanter = GetComponent<EnvanterSystem>();
+        manager = FindAnyObjectByType<AudioManager>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.TryGetComponent<Tutorial>(out var tutorial))
+        {
+            if (!tutorialShown)
+            {
+                _tutorials = tutorial;
+                OgreticiPanel.SetActive(true);
+                isTutorialActive = true;
+                tutorialShown = true; 
+            }
+        }
+
         if (collision.gameObject.TryGetComponent<LevyerDetectorm>(out var detector))
         {
             levyerInteract = detector;
+             if (isTutorialActive) return; 
             canInteract = true;
             x.SetActive(true);
         }
 
         if (collision.gameObject.TryGetComponent<IBaseSocet>(out var socet))
         {
-            if(socet is InteractableSocet)
+            SocetInteract = socet; 
+
+            if (isTutorialActive) return; 
+
+            if (socet is InteractableSocet)
             {
-                SocetInteract = socet;
                 panel.SetActive(true);
             }
-            if(socet is CollectAbleSocet collectAble)
+            if (socet is CollectAbleSocet collectAble)
             {
-                SocetInteract = socet;
                 x.SetActive(!collectAble.is_Collect);
-              
             }
-            if(socet is CollectInteractSocet collectInteract)
+            if (socet is CollectInteractSocet collectInteract)
             {
-                SocetInteract=socet;
-               
-                   x.SetActive(collectInteract.GateAviable());
-                   panel.SetActive(!collectInteract.GateAviable());
-                
-
+                x.SetActive(collectInteract.GateAviable());
+                panel.SetActive(!collectInteract.GateAviable());
+            }
+            if (socet is ColinteractOne colinteractOne)
+            {
+                x.SetActive(colinteractOne.GateAviable());
+                BufandNotPanel.SetActive(!colinteractOne.GateAviable());
             }
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<LevyerDetectorm>(out var detector))
@@ -79,7 +97,8 @@ public class CharacterInteract : MonoBehaviour
         if (collision.gameObject.TryGetComponent<IBaseSocet>(out var socet))
         {
             if (socet == SocetInteract)
-            {   
+            {
+                BufandNotPanel.SetActive(false);
                 panel.SetActive(false);
                 x.SetActive(false);
                 SocetInteract = null;
@@ -87,56 +106,90 @@ public class CharacterInteract : MonoBehaviour
         }
     }
 
-   private void Update()
+    private void Update()
     {
+        if (isTutorialActive && inputManager.KeyE)
+        {
+            OgreticiPanel.SetActive(false);
+            isTutorialActive = false;
+
+          
+            if (SocetInteract != null)
+            {
+                if (SocetInteract is InteractableSocet)
+                {
+                    panel.SetActive(true);
+                }
+                else if (SocetInteract is CollectAbleSocet collectAble)
+                {
+                    x.SetActive(!collectAble.is_Collect);
+                }
+                else if (SocetInteract is CollectInteractSocet collectInteract)
+                {
+                    x.SetActive(collectInteract.GateAviable());
+                    panel.SetActive(!collectInteract.GateAviable());
+                }
+                else if (SocetInteract is ColinteractOne colinteractOne)
+                {
+                    x.SetActive(colinteractOne.GateAviable());
+                    BufandNotPanel.SetActive(!colinteractOne.GateAviable());
+                }
+            }
+
+            if (levyerInteract != null)
+            {
+                x.SetActive(true);
+            }
+
+            return; 
+        }
+
         if (inputManager.KeyE)
         {
             if (levyerInteract is LevyerDetectorm)
             {
-                
                 manager.LevyerSound();
                 HandleLevyerInteraction();
             }
 
-            if (SocetInteract is InteractableSocet && SocetInteract is not CollectInteractSocet)
-            {
-                
-                HandleSocetAddInteraction();
-            }
-
             if (SocetInteract is CollectAbleSocet && SocetInteract is not CollectInteractSocet)
             {
-                 
                 HandleSocetCollectInteraction();
             }
 
             if (SocetInteract is CollectInteractSocet collectSocet)
             {
-                
+                GameObject selectorObj = GameObject.FindGameObjectWithTag("MainSelector");
+                if (selectorObj != null)
+                    selector = selectorObj.GetComponent<Selector>();           
 
                 if (collectSocet.GateAviable())
                 {
-                    
                     HandleSocetCollectInteraction();
                 }
-                    
                 else
                 {
                     manager.AddSound();
                     HandleSocetAddInteraction();
-                    
                 }
-                    
+            }
+            if (SocetInteract is ColinteractOne c)
+            {
+                GameObject selectorObj = GameObject.FindGameObjectWithTag("SecondSelector");
+                if (selectorObj != null)
+                    selector = selectorObj.GetComponent<Selector>();           
+
+                if (c.GateAviable())
+                {
+                    HandleSocetCollectInteraction();
+                }
+                else
+                {
+                    manager.AddSound();
+                    HandleSocetAddInteraction();
+                }
             }
         }
-        
-
-
-        //panel üzerinde silme işlemi kaldırıldı
-        // if (inputManager.KeyOne)
-        // {
-        //     HandleSocetRemoveInteraction();
-        // }
     }
 
     private void HandleLevyerInteraction()
@@ -209,12 +262,35 @@ public class CharacterInteract : MonoBehaviour
                 panel.SetActive(false);
             }
         }
+        else if (SocetInteract is ColinteractOne one)
+        {
+            if (one.is_Collect)
+            {
+                int collectedId = one.Collect();
+                if (collectedId == keyId)
+                {
+                    Debug.Log("Collect ID eşleşti, işlem başarılı.");
+                    envanter.DecStock(keyId);
+                    BufandNotPanel.SetActive(false);
+                }
+                else
+                {
+                    Debug.LogWarning($"Collect ID ({collectedId}) anahtar ID ({keyId}) ile eşleşmedi.");
+                }
+            }
+            else
+            {
+                Debug.Log("Soket boş, Add işlemi yapılıyor...");
+                one.AddLogic(keyId);
+                envanter.DecStock(keyId);
+                BufandNotPanel.SetActive(false);
+            }
+        }
         else
         {
             Debug.LogWarning("SocetInteract tanınan bir soket tipi değil.");
         }
 
-   
         if (SocetInteract is CollectInteractSocet collectSocet)
         {
             if (collectSocet.is_Collect)
@@ -223,7 +299,6 @@ public class CharacterInteract : MonoBehaviour
             }
         }
     }
-
 
     private void HandleSocetCollectInteraction()
     {
@@ -242,12 +317,10 @@ public class CharacterInteract : MonoBehaviour
         if (SocetInteract is IBaseSocet collectable)
         {
             int id = collectable.Collect();
-            
             Debug.Log("Collected ID: " + id);
 
             if (id != 404)
             {
-                
                 envanter.AddStock(id);
                 manager.CollectSound();
                 bool shouldShowPanel = false;
@@ -270,26 +343,4 @@ public class CharacterInteract : MonoBehaviour
             Debug.LogWarning("SocetInteract ICollectable değil!");
         }
     }
-
-
-
-
-    // private void HandleSocetRemoveInteraction()
-    // {
-       
-    //     if (SocetInteract == null ) return;
-    //     if(SocetInteract is InteractableSocet interactable)
-    //     {
-    //         int id=interactable.GetGate();
-    //         if (id != 404)
-    //         {
-    //             envanter.AddStock(id);
-    //         }
-    //         interactable.RemoveLogic();
-    //     } 
-    // }
-
-
-
-
 }
