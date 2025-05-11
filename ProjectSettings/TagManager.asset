@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - leverClosed
-  - LevyerDetector
-  - Lever
-  - Socet
-  - or_gate
-  - delete_gate
+  - MainSelector
+  - SecondSelector
   layers:
   - Default
   - TransparentFX
