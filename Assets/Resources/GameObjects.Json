@@ -42,7 +42,27 @@
     {
       "id": 8,
       "name": "Player",
-      "description": "cdscsdcscdscssdcscsccdscsdcds"
+      "description": "Merhaba! Devreleri birlikte keşfetmeye ne dersin? Haydi, çözelim!"
+    },
+    {
+      "id": 9,
+      "name": "Lever",
+      "description": "Lever, devredeki anahtardır. Açıkken True (1), kapalıyken False (0) olur. Açılabilirler devreyi değiştirir, açılamayanlar sabittir."
+    },
+    {
+      "id": 10,
+      "name": "Soket",
+      "description": "Etkileşimli soket kapıları takıp çıkarabilirsin.Bağlantı kurmak için kapı ekle"
+    },
+    {
+      "id": 11,
+      "name": "Soket",
+      "description": "Default soket, kapıları takıp çıkaramazsın. Bağlantıyı kurmak için kapının özelliklerine göz at"
+    },
+    {
+      "id": 12,
+      "name": "Soket",
+      "description": "toplama soket, eksik kapıları bu soketlerden toplayabilirsin."
     }
   ]
 }

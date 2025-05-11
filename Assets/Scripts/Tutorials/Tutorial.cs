@@ -5,5 +5,6 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
    public GameObj defination;
+   public bool isShow=false;
 
 }

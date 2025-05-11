@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-
 
 public class LevyerDetectorm : MonoBehaviour
-{   
-   public bool set;
-   public void SetEnter(bool status)
-   { 
-     set=status;
-   }
-   public  bool GetEnter(){
-    return set;
-   }
+{
+    public bool set;
+    public bool use_lever = true; // Lever kullanılabilir mi?
+
+    public void SetEnter(bool status)
+    {
+        if (!use_lever) return; // Kullanılamıyorsa değişiklik yapma
+        set = status;
+    }
+
+    public bool GetEnter()
+    {
+        return set;
+    }
 }

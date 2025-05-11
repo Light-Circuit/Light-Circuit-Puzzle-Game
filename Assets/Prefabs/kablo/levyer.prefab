@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leverClosed: {fileID: 21300000, guid: 64d8ba0af02e92e4180df097d563e384, type: 3}
   _leverOpened: {fileID: 21300000, guid: 2507f060bc4ecb9489f41def803581a2, type: 3}
-  Lever_set: 1
 --- !u!114 &2187273974726947228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   set: 0
+  use_lever: 1
 --- !u!61 &470145184155752134
 BoxCollider2D:
   m_ObjectHideFlags: 0

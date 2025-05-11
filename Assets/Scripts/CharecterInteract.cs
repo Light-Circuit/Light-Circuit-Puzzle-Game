@@ -38,22 +38,27 @@ public class CharacterInteract : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Tutorial>(out var tutorial))
         {
-            if (!tutorialShown)
+            if (!tutorial.isShow)
             {
                 _tutorials = tutorial;
                 OgreticiPanel.SetActive(true);
                 isTutorialActive = true;
-                tutorialShown = true; 
+                tutorial.isShow=true;
             }
         }
 
-        if (collision.gameObject.TryGetComponent<LevyerDetectorm>(out var detector))
+       if (collision.gameObject.TryGetComponent<LevyerDetectorm>(out var detector))
         {
             levyerInteract = detector;
-             if (isTutorialActive) return; 
-            canInteract = true;
-            x.SetActive(true);
-        }
+
+            if (isTutorialActive) return;
+
+            if (levyerInteract.use_lever)
+            {
+                canInteract = true;
+                x.SetActive(true); // Sadece kullanılabilir olduğunda göster
+            }
+}
 
         if (collision.gameObject.TryGetComponent<IBaseSocet>(out var socet))
         {
@@ -194,10 +199,12 @@ public class CharacterInteract : MonoBehaviour
 
     private void HandleLevyerInteraction()
     {
-        if (!canInteract || levyerInteract == null) return;
+        if (!canInteract || levyerInteract == null || !levyerInteract.use_lever) return;
+
         bool current = levyerInteract.GetEnter();
         levyerInteract.SetEnter(!current);
     }
+
 
     private void HandleSocetAddInteraction()
     {

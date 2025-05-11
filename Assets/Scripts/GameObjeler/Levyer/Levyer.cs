@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Levyer : BaseSet
 {
-    // public bool _set;
+//    public bool _set;
     public Sprite _leverClosed;
     public Sprite _leverOpened;
     [Header("bunu kapatırsan lever basılabilir olmaz")]
-    public bool Lever_set;
+    // public bool use_lever;
    private LevyerDetectorm detector;
    private SpriteRenderer spriteRenderer;
 
@@ -18,15 +18,15 @@ public class Levyer : BaseSet
     private void Update()
     {
         
-        if (Lever_set)
-        {
-            SetLever();
-        }
+           SetLever();
+           
+       
     }
     
 
     void SetLever()
     {
+      
         if (detector.GetEnter())
         {
             spriteRenderer.sprite=_leverOpened;
@@ -40,6 +40,7 @@ public class Levyer : BaseSet
 
     public override bool GetSet()
     {
+       
        return detector.GetEnter();
     }
 }
