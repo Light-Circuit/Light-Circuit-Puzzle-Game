@@ -7,8 +7,6 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 
-
-
 # Auto-generated VS/MD/VSCode project files
 .vscode/
 *.csproj
@@ -21,10 +19,6 @@
 *.pidb
 *.booproj
 *.svd
-
-# Unity Package Manager
-/[Pp]ackages/manifest.json
-/[Pp]ackages/packages-lock.json
 
 # PlasticSCM files
 .plastic/
@@ -44,5 +38,4 @@ sysinfo.txt
 *.aab
 
 .DS_Store
-
 .fake
