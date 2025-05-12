@@ -2577,7 +2577,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 6329287691181252981}
     m_Modifications:
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.size
@@ -2593,15 +2593,15 @@ PrefabInstance:
       objectReference: {fileID: 1704576540}
     - target: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4699998
+      value: -5.64
       objectReference: {fileID: 0}
     - target: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4300003
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.06103824
+      value: 0.12207648
       objectReference: {fileID: 0}
     - target: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3438,6 +3438,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55bcaf64d2175b54c8e2af0208f263b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1662590970 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
+  m_PrefabInstance: {fileID: 1234130388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1704576540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
@@ -4065,7 +4070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -4343,6 +4348,7 @@ Transform:
   - {fileID: 748151216}
   - {fileID: 1583759702}
   - {fileID: 1465546164}
+  - {fileID: 1662590970}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6805381841053149577
@@ -4412,7 +4418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6329287691181252981}
   m_Layer: 0
-  m_Name: Level4Devre
+  m_Name: Level5Devre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4429,4 +4435,3 @@ SceneRoots:
   - {fileID: 3748200058492389532}
   - {fileID: 6329287691181252981}
   - {fileID: 5894959268431758156}
-  - {fileID: 1234130388}
