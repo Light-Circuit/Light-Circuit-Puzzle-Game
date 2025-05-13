@@ -260,6 +260,7 @@ MonoBehaviour:
   OgreticiPanel: {fileID: 0}
   panel: {fileID: 288137837721757819}
   BufandNotPanel: {fileID: 4880926267917412549}
+  isTutorialActive: 0
   _tutorials: {fileID: 0}
 --- !u!114 &8470283538259339670
 MonoBehaviour:
