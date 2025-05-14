@@ -15,9 +15,11 @@ namespace Player.Input
         private InputAction downAction;
         private InputAction leftAction;
         private InputAction rightAction;
+        private InputAction pauseAction;
 
         public Vector2 move { get; private set; }
         public bool KeyE { get; private set; }
+        public bool pauseKey{get; private set;}
         public bool RightArrowPressed { get; private set; }
         public bool LeftArrowPressed { get; private set; }
         public bool UpArrowPressed { get; private set; }
@@ -28,6 +30,7 @@ namespace Player.Input
         private bool leftPressed;
         private bool upPressed;
         private bool downPressed;
+        private bool pausePressed;
 
         void Start()
         {
@@ -39,6 +42,7 @@ namespace Player.Input
             downAction = currentInputMap.FindAction("Down");
             leftAction = currentInputMap.FindAction("Left");
             rightAction = currentInputMap.FindAction("Right");
+            pauseAction=currentInputMap.FindAction("Pause");
 
             moveAction.performed += OnMove;
             moveAction.canceled += OnMove;
@@ -48,7 +52,9 @@ namespace Player.Input
             downAction.performed += ctx => downPressed = ctx.performed;
             leftAction.performed += ctx => leftPressed = ctx.performed;
             rightAction.performed += ctx => rightPressed = ctx.performed;
+            pauseAction.performed +=ctx=> pausePressed=ctx.performed;
 
+            pauseAction.Enable();
             keyEAction.Enable();
             upAction.Enable();
             downAction.Enable();
@@ -59,6 +65,7 @@ namespace Player.Input
         void Update()
         {
             HandleKeyE();
+            HandleKeyP();
             HandleDirectionKeys();
         }
 
@@ -67,7 +74,11 @@ namespace Player.Input
             KeyE = keyEPressed;
             keyEPressed = false;
         }
-
+        private void HandleKeyP()
+        {
+            pauseKey=pausePressed;
+            pausePressed=false;
+        }
         private void HandleDirectionKeys()
         {
             RightArrowPressed = rightPressed;
@@ -97,7 +108,9 @@ namespace Player.Input
             downAction.performed -= ctx => downPressed = ctx.performed;
             leftAction.performed -= ctx => leftPressed = ctx.performed;
             rightAction.performed -= ctx => rightPressed = ctx.performed;
+            pauseAction.performed -=ctx=> pausePressed=ctx.performed;
 
+            pauseAction.Disable();
             keyEAction.Disable();
             upAction.Disable();
             downAction.Disable();

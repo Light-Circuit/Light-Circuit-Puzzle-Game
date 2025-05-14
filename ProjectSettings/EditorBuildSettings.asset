@@ -12,9 +12,42 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/levelSelection.unity
     guid: f2ac024d3044f38408055f7d786191ff
   - enabled: 1
-    path: Assets/Scenes/DenemScene/denemeScene.unity
-    guid: 8cc5576737a204e858385c463fee31a2
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels1.unity
+    guid: 1902f07c94f244c83a8ba1a630f5ec73
   - enabled: 1
-    path: Assets/Scenes/DenemScene/denemeScene 1.unity
-    guid: 47be42fb233a24e8385f7a689d3f15d6
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels2.unity
+    guid: 62670f56c899341d0840ac8c30b6ac79
+  - enabled: 1
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels3.unity
+    guid: e49e361f7d9464c528945acfa15742d7
+  - enabled: 1
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels4.unity
+    guid: b25c40324fbc743aaab7f64f3eb9c29b
+  - enabled: 1
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels5.unity
+    guid: 11cd2ab6dd9d340249facb058d4c34b6
+  - enabled: 1
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels6.unity
+    guid: 3786a005e4c854db887b5b2b344bc497
+  - enabled: 1
+    path: Assets/Scenes/DenemScene/LevelsOfs/Levels20.unity
+    guid: f8568e152ecd946da96a0919b3b372ec
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: f96525910045c46e599a250eb4eb56c5
+  - enabled: 1
+    path: Assets/Scenes/Levels/level2.unity
+    guid: fccdb78ad4a7d194db77f9c338682d3e
+  - enabled: 1
+    path: Assets/Scenes/Levels/level3.unity
+    guid: efb84530650d2114e9cf0228d9f94ba8
+  - enabled: 1
+    path: Assets/Scenes/Levels/level4.unity
+    guid: 6db3bb60bb31c6144899b75aa56f00cf
+  - enabled: 1
+    path: Assets/Scenes/Levels/level5.unity
+    guid: c89a88d682dbc594b8194ad2178a6b31
+  - enabled: 1
+    path: Assets/Scenes/Levels/level6.unity
+    guid: 71f44fe52f2a6784babad6856545f527
   m_configObjects: {}
