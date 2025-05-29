@@ -2412,10 +2412,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
+    - target: {fileID: 4740787890909749968, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1662590967}
     - target: {fileID: 8523534210073964943, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: m_SortingOrder
       value: 1
