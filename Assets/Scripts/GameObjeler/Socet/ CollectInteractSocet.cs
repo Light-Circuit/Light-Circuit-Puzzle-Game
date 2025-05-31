@@ -7,6 +7,15 @@ public class CollectInteractSocet : BaseSocet
      
     public bool is_Collect;
    private bool previousResult = false;
+   
+   void Start()
+   {
+       audioManager = FindObjectOfType<AudioManager>();
+       if (audioManager == null)
+       {
+           Debug.LogWarning("AudioManager bulunamadı!");
+       }
+   }
 
 
     void Update()
