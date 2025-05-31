@@ -5,7 +5,9 @@ using UnityEngine;
 public class ColinteractOne : BaseSocet
 {
     public bool is_Collect;
+    private bool previousResult = false;
 
+   
 
     void Update()
     {
@@ -42,6 +44,12 @@ public class ColinteractOne : BaseSocet
     public override void SocetRule()
     {
         base.SocetRule();
+        if (result && !previousResult && audioManager != null)
+        {
+            audioManager.SocetSound();
+        }
+         previousResult = result;
+        
     }
     public override bool GateAviable()
     {

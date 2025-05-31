@@ -4400,7 +4400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -4500,6 +4500,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8151161908352695360, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
   m_PrefabInstance: {fileID: 2509687969538536933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2509687969538536936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 30060666795686285, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
+  m_PrefabInstance: {fileID: 2509687969538536933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3066652793626174383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5692596747553928804, guid: b7085e19ce80d430ebbc5d539691a967, type: 3}
@@ -4561,6 +4572,14 @@ PrefabInstance:
       propertyPath: set
       value: 
       objectReference: {fileID: 8730658690297864275}
+    - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
+      propertyPath: SoketSayisi
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
+      propertyPath: SoketNumberText
+      value: 
+      objectReference: {fileID: 2509687969538536936}
     - target: {fileID: 8523534210073964943, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: m_SortingOrder
       value: 1

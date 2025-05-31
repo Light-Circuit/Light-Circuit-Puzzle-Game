@@ -6,7 +6,7 @@ public class CollectInteractSocet : BaseSocet
 {
      
     public bool is_Collect;
-
+   private bool previousResult = false;
 
 
     void Update()
@@ -14,7 +14,7 @@ public class CollectInteractSocet : BaseSocet
         SocetRule();
         SocetIsGate();
     }
-
+   
     public override int Collect()
     {
         int id = 404;
@@ -40,10 +40,16 @@ public class CollectInteractSocet : BaseSocet
         return id;
     }
 
-    
+
     public override void SocetRule()
     {
         base.SocetRule();
+        if (result && !previousResult && audioManager != null)
+        {
+            audioManager.SocetSound();
+        }
+         previousResult = result;
+        
     }
     public override bool GateAviable()
     {

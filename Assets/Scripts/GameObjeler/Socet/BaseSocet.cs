@@ -11,11 +11,12 @@ public class BaseSocet : BaseSet, IBaseSocet
     private Finish finish;
     private bool socetİsnull;
     private bool previousSocketState = false;
+    public AudioManager audioManager;
 
     void Start()
     {
         finish = FindAnyObjectByType<Finish>();
-        
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
    
     public override bool GetSet()
@@ -49,7 +50,7 @@ public class BaseSocet : BaseSet, IBaseSocet
             if (gate.logic is Buffer || gate.logic is Not)
             {
                 result = gate.logic.Gate(input1);
-
+                
             }
             else
             {
@@ -65,6 +66,7 @@ public class BaseSocet : BaseSet, IBaseSocet
             result = false;
 
         }
+       
     }
 
 
@@ -132,6 +134,7 @@ public class BaseSocet : BaseSet, IBaseSocet
     foreach (GateClass gate in logicGates)
     {
         if (gate.logic != null && gate.logic.gameObject != null && gate.logic.gameObject.activeSelf)
+
         {
             anyActive = true;
             break;
@@ -141,14 +144,26 @@ public class BaseSocet : BaseSet, IBaseSocet
     
     if (anyActive != previousSocketState)
     {
-        if (anyActive)
-            finish.soketnumberAdd++;
+        if (finish != null)
+        {
+            if (anyActive)
+            {
+                finish.soketnumberAdd++;
+            }
+            else
+            {
+                finish.soketnumberAdd--;
+            }
+        }
         else
-            finish.soketnumberAdd--;
+        {
+            Debug.LogWarning("Finish nesnesi null! Sahneye eklenmemiş olabilir.");
+        }
 
         previousSocketState = anyActive;
     }
-}
+
+    }
 
 
 }

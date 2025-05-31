@@ -5403,7 +5403,7 @@ PrefabInstance:
       objectReference: {fileID: 1858557933}
     - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: SoketSayisi
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: SoketNumberText

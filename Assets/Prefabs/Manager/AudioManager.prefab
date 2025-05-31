@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4287443902864177371
 Transform:
   m_ObjectHideFlags: 0
@@ -150,4 +150,5 @@ MonoBehaviour:
   levyerSound: {fileID: 8300000, guid: 6112ea6bd266a479eb9f658c78e40457, type: 3}
   PanelSwitch: {fileID: 8300000, guid: 03e0a10250fa54e92b85de240af2b42e, type: 3}
   panelnoneSound: {fileID: 8300000, guid: 90287d5968a1b41998c095d683be924e, type: 3}
+  socetSound: {fileID: 8300000, guid: eea4f85d27e7c45b380b4bee19328b40, type: 3}
   sesValue: 0.5
