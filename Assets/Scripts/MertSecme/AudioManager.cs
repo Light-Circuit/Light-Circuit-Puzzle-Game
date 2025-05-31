@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
    [SerializeField] private AudioClip levyerSound;
     [SerializeField] private AudioClip PanelSwitch;
    [SerializeField] private AudioClip panelnoneSound;
+   [SerializeField] private AudioClip socetSound;
     [SerializeField] public float sesValue=0.2f;
 
     
@@ -84,7 +85,10 @@ public class AudioManager : MonoBehaviour
     {
         m_AudioSource.PlayOneShot(panelnoneSound, sesValue);
     }
-
+      public void SocetSound()
+    {
+        m_AudioSource.PlayOneShot(socetSound, sesValue);
+    }
 
 }
     
