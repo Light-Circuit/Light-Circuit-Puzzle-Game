@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
    [SerializeField] private AudioClip levyerSound;
     [SerializeField] private AudioClip PanelSwitch;
    [SerializeField] private AudioClip panelnoneSound;
-    [SerializeField] private float sesValue=0.2f;
+    [SerializeField] public float sesValue=0.2f;
 
     
     void Awake()
@@ -42,12 +42,16 @@ public class AudioManager : MonoBehaviour
 {   m_AudioSource=GetComponent<AudioSource>();
     m_AudioSource.clip = BackgroundSound;
     m_AudioSource.loop = true; 
-    m_AudioSource.volume = 0.2f; 
+     
     m_AudioSource.Play(); 
 }
+    void Update()
+    {
+        m_AudioSource.volume = sesValue;
+    }
 
 
-    
+
     public void ButtonSelectedSound()
     {
       m_AudioSource.PlayOneShot(UIbuttonSelected, sesValue);

@@ -77,7 +77,7 @@ namespace Player.Input
         private void HandleKeyP()
         {
             pauseKey=pausePressed;
-            pausePressed=false;
+             pausePressed=false;
         }
         private void HandleDirectionKeys()
         {
