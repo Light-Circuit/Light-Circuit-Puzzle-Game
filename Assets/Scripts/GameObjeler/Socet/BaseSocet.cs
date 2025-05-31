@@ -5,68 +5,78 @@ using UnityEngine;
 
 public class BaseSocet : BaseSet, IBaseSocet
 {
-    public GateClass[] logicGates; 
+    public GateClass[] logicGates;
     public BaseSet[] set;
     public bool result;
+    private Finish finish;
+    private bool socetİsnull;
+    private bool previousSocketState = false;
 
+    void Start()
+    {
+        finish = FindAnyObjectByType<Finish>();
+        
+    }
+   
     public override bool GetSet()
     {
         return result;
     }
 
 
-  public virtual void SocetRule()
-{
-    if (set == null || set.Length < 2 || set[0] == null || set[1] == null)
+    public virtual void SocetRule()
     {
-        result = false;
-        return;
-    }
-
-    bool input1 = set[0].GetSet();
-    bool input2 = set[1].GetSet();
-
-    bool aktifKapı = false;
-
-    foreach (GateClass gate in logicGates)
-    {
-        if (gate.logic == null || gate.logic.gameObject == null || !gate.logic.gameObject.activeSelf)
+        if (set == null || set.Length < 2 || set[0] == null || set[1] == null)
         {
-            continue;
+            result = false;
+            return;
         }
 
-        aktifKapı = true;
+        bool input1 = set[0].GetSet();
+        bool input2 = set[1].GetSet();
 
-        if (gate.logic is Buffer || gate.logic is Not)
+        bool aktifKapı = false;
+
+        foreach (GateClass gate in logicGates)
         {
-            result = gate.logic.Gate(input1);
+            if (gate.logic == null || gate.logic.gameObject == null || !gate.logic.gameObject.activeSelf)
+            {
+                continue;
+            }
+
+            aktifKapı = true;
+
+            if (gate.logic is Buffer || gate.logic is Not)
+            {
+                result = gate.logic.Gate(input1);
+
+            }
+            else
+            {
+                result = gate.logic.Gate(input1, input2);
+
+            }
+
+            break;
         }
-        else
+
+        if (!aktifKapı)
         {
-            result = gate.logic.Gate(input1, input2);
+            result = false;
+
         }
-
-        break; 
     }
-
-    if (!aktifKapı)
-    {
-        result = false; 
-    }
-}
-
-
 
 
     public virtual void AddLogic(int id)
     {
         int objId = id;
 
-       RemoveLogic();
-        
+        RemoveLogic();
+
         foreach (GateClass gate in logicGates)
         {
-            if (gate.logic != null) 
+            if (gate.logic != null)
             {
                 if (gate.Id == objId)
                 {
@@ -74,15 +84,15 @@ public class BaseSocet : BaseSet, IBaseSocet
                     {
                         gate.logic.gameObject.SetActive(true);
                         Debug.Log("Aktif edilen objenin ismi: " + gate.logic.name);
-                        break; 
+                        break;
                     }
                 }
             }
             else
             {
-                Debug.Log("Gate logic null!"); 
+                Debug.Log("Gate logic null!");
             }
-        } 
+        }
     }
 
     public virtual void RemoveLogic()
@@ -93,26 +103,52 @@ public class BaseSocet : BaseSet, IBaseSocet
         }
     }
 
-   
+
     public virtual int Collect()
     {
         RemoveLogic();
         return 404;
     }
 
-   public virtual bool GateAviable()
+    public virtual bool GateAviable()
+    {
+        int id = 404;
+        foreach (var gate in logicGates)
+        {
+            if (gate.logic != null && gate.logic.gameObject != null && gate.logic.gameObject.activeSelf)
+            {
+                id = gate.Id;
+                break;
+            }
+        }
+
+        return id != 404;
+    }
+
+    public virtual void SocetIsGate()
 {
-    int id = 404;
-    foreach (var gate in logicGates)
+    bool anyActive = false;
+
+    foreach (GateClass gate in logicGates)
     {
         if (gate.logic != null && gate.logic.gameObject != null && gate.logic.gameObject.activeSelf)
         {
-            id = gate.Id;
+            anyActive = true;
             break;
         }
     }
 
-    return id != 404; 
+    
+    if (anyActive != previousSocketState)
+    {
+        if (anyActive)
+            finish.soketnumberAdd++;
+        else
+            finish.soketnumberAdd--;
+
+        previousSocketState = anyActive;
+    }
 }
+
 
 }

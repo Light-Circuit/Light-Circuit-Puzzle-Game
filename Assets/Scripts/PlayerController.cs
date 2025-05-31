@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private AudioManager manager;
     public float MoveSpeed;
     private InputManager inputManager;
-
+    public float maxX, minX, maxY, minY;
     private bool isMoving;
 
     private Vector2 input;
@@ -29,11 +29,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(characterInteract.isTutorialActive) return;
+        if (characterInteract.isTutorialActive) return;
+        limitPos();
         PlayerMove();
+        
     }
 
-
+    private void limitPos()
+    {
+        Vector2 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        transform.position = pos;
+    }
   
 
 void PlayerMove()

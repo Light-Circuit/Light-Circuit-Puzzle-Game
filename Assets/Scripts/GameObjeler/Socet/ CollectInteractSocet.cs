@@ -12,6 +12,7 @@ public class CollectInteractSocet : BaseSocet
     void Update()
     {
         SocetRule();
+        SocetIsGate();
     }
 
     public override int Collect()
@@ -60,5 +61,8 @@ public class CollectInteractSocet : BaseSocet
     {
         base.RemoveLogic();
     }
-
+    public override void SocetIsGate()
+    {
+        base.SocetIsGate();
+    }
 }

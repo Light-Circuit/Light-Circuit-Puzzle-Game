@@ -144,3 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   set: {fileID: 0}
+  soketnumberAdd: 0
+  SoketSayisi: 2
+  SoketNumberText: {fileID: 0}

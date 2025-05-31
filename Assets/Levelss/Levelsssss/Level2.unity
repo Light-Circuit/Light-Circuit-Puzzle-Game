@@ -548,7 +548,7 @@ Transform:
   m_GameObject: {fileID: 673809542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17746496, y: 2.584387, z: 0}
+  m_LocalPosition: {x: -0.17746496, y: 2.5843873, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2010,6 +2010,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
   m_PrefabInstance: {fileID: 2509687969538536933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2509687969538536935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 30060666795686285, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
+  m_PrefabInstance: {fileID: 2509687969538536933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3748200058492389532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2066,6 +2077,14 @@ PrefabInstance:
       propertyPath: set
       value: 
       objectReference: {fileID: 407504157}
+    - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
+      propertyPath: SoketSayisi
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
+      propertyPath: SoketNumberText
+      value: 
+      objectReference: {fileID: 2509687969538536935}
     - target: {fileID: 8523534210073964943, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: m_SortingOrder
       value: 1

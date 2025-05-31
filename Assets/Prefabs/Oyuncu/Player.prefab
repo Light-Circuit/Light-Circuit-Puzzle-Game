@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
+  maxX: 17.43
+  minX: -16.91
+  maxY: 9.931374
+  minY: -3.64
 --- !u!95 &762246659735095233
 Animator:
   serializedVersion: 5

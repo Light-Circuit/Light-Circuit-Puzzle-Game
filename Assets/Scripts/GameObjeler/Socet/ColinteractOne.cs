@@ -10,6 +10,7 @@ public class ColinteractOne : BaseSocet
     void Update()
     {
         SocetRule();
+        SocetIsGate();
     }
 
     public override int Collect()
@@ -24,7 +25,7 @@ public class ColinteractOne : BaseSocet
             }
 
             id = gate.Id;
-            gate.logic.gameObject.SetActive(false); 
+            gate.logic.gameObject.SetActive(false);
             is_Collect = false;
             Debug.Log($"Collect işlemi tamamlandı, id: {id}");
             break;
@@ -37,7 +38,7 @@ public class ColinteractOne : BaseSocet
         return id;
     }
 
-    
+
     public override void SocetRule()
     {
         base.SocetRule();
@@ -47,15 +48,19 @@ public class ColinteractOne : BaseSocet
         return base.GateAviable();
     }
 
-   public override void AddLogic(int id)
+    public override void AddLogic(int id)
     {
         base.AddLogic(id);
-        is_Collect = true; 
+        is_Collect = true;
         Debug.Log($"AddLogic ile sokete eklendi, id: {id}, is_Collect true yapıldı.");
     }
 
     public override void RemoveLogic()
     {
         base.RemoveLogic();
+    }
+    public override void SocetIsGate()
+    {
+        base.SocetIsGate();
     }
 }
