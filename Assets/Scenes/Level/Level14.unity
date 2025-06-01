@@ -1100,7 +1100,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 996778624}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (28)
@@ -2969,11 +2969,11 @@ PrefabInstance:
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[0]
       value: 
-      objectReference: {fileID: 1342439377}
+      objectReference: {fileID: 984678351}
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 679120184}
+      objectReference: {fileID: 944923394}
     - target: {fileID: 4614521635228109439, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: m_Name
       value: InteractCollectSocet (5)
@@ -4960,27 +4960,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[0]._stock
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[1]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[2]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[3]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[4]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[5]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[6]._stock
@@ -4988,7 +4988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[7]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879204142837787504, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: m_SortingOrder
@@ -5081,7 +5081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3495273406204916813, guid: b2e0ed2fe45b8487087452b37013e928, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4287443902864177371, guid: b2e0ed2fe45b8487087452b37013e928, type: 3}
       propertyPath: m_LocalPosition.x

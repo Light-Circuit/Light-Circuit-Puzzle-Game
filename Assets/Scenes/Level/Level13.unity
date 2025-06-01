@@ -407,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 692944285570962763, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2135687964}
     - target: {fileID: 4798303559149028107, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.336819
@@ -1033,7 +1033,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 280220297}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (28)
@@ -4370,7 +4370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -4646,27 +4646,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[0]._stock
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[1]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[2]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[3]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[4]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[5]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[6]._stock
@@ -4674,7 +4674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[7]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879204142837787504, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: m_SortingOrder

@@ -5242,7 +5242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -5403,7 +5403,7 @@ PrefabInstance:
       objectReference: {fileID: 1858557933}
     - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: SoketSayisi
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5576287023245321962, guid: b70fb7ae8067c4d84a3a3e64908de002, type: 3}
       propertyPath: SoketNumberText
