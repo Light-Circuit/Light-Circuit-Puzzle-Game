@@ -16,14 +16,17 @@ namespace Player.Input
         private InputAction leftAction;
         private InputAction rightAction;
         private InputAction pauseAction;
+        private InputAction enterAction;
 
         public Vector2 move { get; private set; }
+
         public bool KeyE { get; private set; }
         public bool pauseKey { get; private set; }
         public bool RightArrowPressed { get; private set; }
         public bool LeftArrowPressed { get; private set; }
         public bool UpArrowPressed { get; private set; }
         public bool DownArrowPressed { get; private set; }
+        public bool KeyEnter { get; private set; }
 
         private bool keyEPressed;
         private bool rightPressed;
@@ -31,6 +34,7 @@ namespace Player.Input
         private bool upPressed;
         private bool downPressed;
         private bool pausePressed;
+        private bool enterPressed;
 
         void Start()
         {
@@ -47,6 +51,7 @@ namespace Player.Input
         {
             HandleKeyE();
             HandleKeyP();
+            HandleKeyEnter();
             HandleDirectionKeys();
         }
 
@@ -60,6 +65,12 @@ namespace Player.Input
         {
             pauseKey = pausePressed;
             pausePressed = false;
+        }
+
+        private void HandleKeyEnter()
+        {
+            KeyEnter = enterPressed;
+            enterPressed = false;
         }
 
         private void HandleDirectionKeys()
@@ -92,15 +103,14 @@ namespace Player.Input
 
         private void UpdateActionReferences()
         {
-            // Önce eski bağlantıları kaldır
             if (moveAction != null)
             {
                 moveAction.performed -= OnMove;
                 moveAction.canceled -= OnMove;
             }
 
-            // Yeni Action Map'e göre aksiyonları bul
             moveAction = currentInputMap.FindAction("PlayerMove");
+            enterAction = currentInputMap.FindAction("KeyEnter");
             keyEAction = currentInputMap.FindAction("KeyE");
             upAction = currentInputMap.FindAction("Up");
             downAction = currentInputMap.FindAction("Down");
@@ -108,12 +118,17 @@ namespace Player.Input
             rightAction = currentInputMap.FindAction("Right");
             pauseAction = currentInputMap.FindAction("Pause");
 
-            // Aksiyonları bağla ve enable et
             if (moveAction != null)
             {
                 moveAction.performed += OnMove;
                 moveAction.canceled += OnMove;
                 moveAction.Enable();
+            }
+
+            if (enterAction != null)
+            {
+                enterAction.performed += ctx => enterPressed = ctx.performed;
+                enterAction.Enable();
             }
 
             if (keyEAction != null)
@@ -162,6 +177,7 @@ namespace Player.Input
             }
 
             if (keyEAction != null) keyEAction.Disable();
+            if (enterAction != null) enterAction.Disable();
             if (upAction != null) upAction.Disable();
             if (downAction != null) downAction.Disable();
             if (leftAction != null) leftAction.Disable();

@@ -45,6 +45,10 @@ public class LevelSelectedUI : MonoBehaviour
     {
         HandleInput();
         UpdateSelection();
+         if (input.KeyEnter && selectedObject != null)
+    {
+        selectedObject.onClick.Invoke();
+    }
     }
 
     void HandleInput()
