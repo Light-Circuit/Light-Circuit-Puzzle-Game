@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float MoveSpeed;
     private InputManager inputManager;
     public float maxX, minX, maxY, minY;
+    public GameObject PauseMenu;
     private bool isMoving;
 
     private Vector2 input;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (characterInteract.isTutorialActive) return;
+        if (PauseMenu.activeSelf) return;
         limitPos();
         PlayerMove();
         
