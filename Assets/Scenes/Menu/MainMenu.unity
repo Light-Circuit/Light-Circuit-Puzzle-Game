@@ -227,8 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5431b16ee3bdcb04ea862b8514550de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionsPanel: {fileID: 0}
-  MenuPanel: {fileID: 0}
+  OptionsPanel: {fileID: 4024546916232775063}
+  MenuPanel: {fileID: 1385284038459810206}
+  selectedUI: {fileID: 1131751274}
+  PauseButton: {fileID: 2715627661895233903}
+  PlayButton: {fileID: 2402768164008241767}
+  firstOptionButton: {fileID: 2715627661895233903}
 --- !u!1 &668209630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionsPanel: {fileID: 4024546916232775063}
   MenuPanel: {fileID: 1385284038459810206}
+  selectedUI: {fileID: 0}
+  PauseButton: {fileID: 2715627661895233903}
+  PlayButton: {fileID: 2402768164008241767}
+  firstOptionButton: {fileID: 0}
 --- !u!114 &349212574538739386
 MonoBehaviour:
   m_ObjectHideFlags: 0
