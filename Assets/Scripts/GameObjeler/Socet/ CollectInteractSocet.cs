@@ -11,10 +11,7 @@ public class CollectInteractSocet : BaseSocet
    void Start()
    {
        audioManager = FindObjectOfType<AudioManager>();
-       if (audioManager == null)
-       {
-           Debug.LogWarning("AudioManager bulunamadı!");
-       }
+      
    }
 
 

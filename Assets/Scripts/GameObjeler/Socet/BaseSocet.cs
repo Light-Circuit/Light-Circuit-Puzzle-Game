@@ -8,16 +8,23 @@ public class BaseSocet : BaseSet, IBaseSocet
     public GateClass[] logicGates;
     public BaseSet[] set;
     public bool result;
-    private Finish finish;
-    private bool socetİsnull;
+    public Finish finish;
+
     private bool previousSocketState = false;
     public AudioManager audioManager;
 
-    void Start()
+
+    void Awake()
     {
         finish = FindAnyObjectByType<Finish>();
+    }
+    void Start()
+    {
         audioManager = FindAnyObjectByType<AudioManager>();
     }
+
+
+
    
     public override bool GetSet()
     {
@@ -144,8 +151,8 @@ public class BaseSocet : BaseSet, IBaseSocet
     
     if (anyActive != previousSocketState)
     {
-        if (finish != null)
-        {
+           if (finish != null)
+{
             if (anyActive)
             {
                 finish.soketnumberAdd++;
@@ -153,12 +160,13 @@ public class BaseSocet : BaseSet, IBaseSocet
             else
             {
                 finish.soketnumberAdd--;
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Finish nesnesi null! Sahneye eklenmemiş olabilir.");
-        }
+             }
+}
+else
+{
+    Debug.LogWarning("Finish nesnesi null! SocetIsGate içinde.");
+}
+
 
         previousSocketState = anyActive;
     }
