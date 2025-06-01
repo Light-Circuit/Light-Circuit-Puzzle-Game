@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class SelectedUI : MonoBehaviour
+public class LevelSelectedUI : MonoBehaviour
 {
     [Header("UI Referansları")]
-    public GameObject mainMenu;
+    
     public GameObject optionsMenu;
     public GameObject playButton;
     public GameObject backButton;
@@ -66,12 +66,7 @@ public class SelectedUI : MonoBehaviour
             }
         }
       
-        else if (mainMenu.activeSelf && previousOptionsActive)
-        {
-            SelectButton(playButton);
-        }
-
-        previousOptionsActive = optionsMenu.activeSelf;
+       
     }
 
     void DetectMouseMovement()
@@ -107,10 +102,7 @@ public class SelectedUI : MonoBehaviour
                 {
                     SelectButton(backButton);
                 }
-                else if (mainMenu.activeSelf)
-                {
-                    SelectButton(playButton);
-                }
+              
             }
         }
     }

@@ -17,7 +17,7 @@ public class CharacterInteract : MonoBehaviour
     private EnvanterSystem envanter;
     private bool canInteract = false;
     [HideInInspector]public bool isTutorialActive = false;
-    private bool tutorialShown = false;
+    
 
     [HideInInspector] public Tutorial _tutorials;
 
@@ -56,7 +56,7 @@ public class CharacterInteract : MonoBehaviour
             if (levyerInteract.use_lever)
             {
                 canInteract = true;
-                x.SetActive(true); // Sadece kullanılabilir olduğunda göster
+                x.SetActive(true); 
             }
 }
 

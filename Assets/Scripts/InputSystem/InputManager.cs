@@ -19,7 +19,7 @@ namespace Player.Input
 
         public Vector2 move { get; private set; }
         public bool KeyE { get; private set; }
-        public bool pauseKey{get; private set;}
+        public bool pauseKey { get; private set; }
         public bool RightArrowPressed { get; private set; }
         public bool LeftArrowPressed { get; private set; }
         public bool UpArrowPressed { get; private set; }
@@ -34,32 +34,13 @@ namespace Player.Input
 
         void Start()
         {
+            if (playerInput == null)
+            {
+                playerInput = GetComponent<PlayerInput>();
+            }
+
             currentInputMap = playerInput.currentActionMap;
-
-            moveAction = currentInputMap.FindAction("PlayerMove");
-            keyEAction = currentInputMap.FindAction("KeyE");
-            upAction = currentInputMap.FindAction("Up");
-            downAction = currentInputMap.FindAction("Down");
-            leftAction = currentInputMap.FindAction("Left");
-            rightAction = currentInputMap.FindAction("Right");
-            pauseAction=currentInputMap.FindAction("Pause");
-
-            moveAction.performed += OnMove;
-            moveAction.canceled += OnMove;
-
-            keyEAction.performed += ctx => keyEPressed = ctx.performed;
-            upAction.performed += ctx => upPressed = ctx.performed;
-            downAction.performed += ctx => downPressed = ctx.performed;
-            leftAction.performed += ctx => leftPressed = ctx.performed;
-            rightAction.performed += ctx => rightPressed = ctx.performed;
-            pauseAction.performed +=ctx=> pausePressed=ctx.performed;
-
-            pauseAction.Enable();
-            keyEAction.Enable();
-            upAction.Enable();
-            downAction.Enable();
-            leftAction.Enable();
-            rightAction.Enable();
+            UpdateActionReferences();
         }
 
         void Update()
@@ -74,11 +55,13 @@ namespace Player.Input
             KeyE = keyEPressed;
             keyEPressed = false;
         }
+
         private void HandleKeyP()
         {
-            pauseKey=pausePressed;
-            pausePressed=false;
+            pauseKey = pausePressed;
+            pausePressed = false;
         }
+
         private void HandleDirectionKeys()
         {
             RightArrowPressed = rightPressed;
@@ -86,7 +69,6 @@ namespace Player.Input
             UpArrowPressed = upPressed;
             DownArrowPressed = downPressed;
 
-            // Reset the pressed states after handling them
             rightPressed = false;
             leftPressed = false;
             upPressed = false;
@@ -98,24 +80,93 @@ namespace Player.Input
             move = context.ReadValue<Vector2>();
         }
 
+        public void SwitchActionMap(string newMap)
+        {
+            if (playerInput.currentActionMap.name == newMap) return;
+
+            playerInput.SwitchCurrentActionMap(newMap);
+            currentInputMap = playerInput.currentActionMap;
+
+            UpdateActionReferences();
+        }
+
+        private void UpdateActionReferences()
+        {
+            // Önce eski bağlantıları kaldır
+            if (moveAction != null)
+            {
+                moveAction.performed -= OnMove;
+                moveAction.canceled -= OnMove;
+            }
+
+            // Yeni Action Map'e göre aksiyonları bul
+            moveAction = currentInputMap.FindAction("PlayerMove");
+            keyEAction = currentInputMap.FindAction("KeyE");
+            upAction = currentInputMap.FindAction("Up");
+            downAction = currentInputMap.FindAction("Down");
+            leftAction = currentInputMap.FindAction("Left");
+            rightAction = currentInputMap.FindAction("Right");
+            pauseAction = currentInputMap.FindAction("Pause");
+
+            // Aksiyonları bağla ve enable et
+            if (moveAction != null)
+            {
+                moveAction.performed += OnMove;
+                moveAction.canceled += OnMove;
+                moveAction.Enable();
+            }
+
+            if (keyEAction != null)
+            {
+                keyEAction.performed += ctx => keyEPressed = ctx.performed;
+                keyEAction.Enable();
+            }
+
+            if (upAction != null)
+            {
+                upAction.performed += ctx => upPressed = ctx.performed;
+                upAction.Enable();
+            }
+
+            if (downAction != null)
+            {
+                downAction.performed += ctx => downPressed = ctx.performed;
+                downAction.Enable();
+            }
+
+            if (leftAction != null)
+            {
+                leftAction.performed += ctx => leftPressed = ctx.performed;
+                leftAction.Enable();
+            }
+
+            if (rightAction != null)
+            {
+                rightAction.performed += ctx => rightPressed = ctx.performed;
+                rightAction.Enable();
+            }
+
+            if (pauseAction != null)
+            {
+                pauseAction.performed += ctx => pausePressed = ctx.performed;
+                pauseAction.Enable();
+            }
+        }
+
         private void OnDisable()
         {
-            moveAction.performed -= OnMove;
-            moveAction.canceled -= OnMove;
+            if (moveAction != null)
+            {
+                moveAction.performed -= OnMove;
+                moveAction.canceled -= OnMove;
+            }
 
-            keyEAction.performed -= ctx => keyEPressed = ctx.performed;
-            upAction.performed -= ctx => upPressed = ctx.performed;
-            downAction.performed -= ctx => downPressed = ctx.performed;
-            leftAction.performed -= ctx => leftPressed = ctx.performed;
-            rightAction.performed -= ctx => rightPressed = ctx.performed;
-            pauseAction.performed -=ctx=> pausePressed=ctx.performed;
-
-            pauseAction.Disable();
-            keyEAction.Disable();
-            upAction.Disable();
-            downAction.Disable();
-            leftAction.Disable();
-            rightAction.Disable();
+            if (keyEAction != null) keyEAction.Disable();
+            if (upAction != null) upAction.Disable();
+            if (downAction != null) downAction.Disable();
+            if (leftAction != null) leftAction.Disable();
+            if (rightAction != null) rightAction.Disable();
+            if (pauseAction != null) pauseAction.Disable();
         }
     }
 }

@@ -1,20 +1,21 @@
+using Player;
 using Player.Input;
 using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    InputManager Input;
+    private InputManager input;
     public GameObject pauseMenu;
     private bool isPaused = false;
 
     void Start()
     {
-        Input = FindAnyObjectByType<InputManager>();
+        input = FindAnyObjectByType<InputManager>();
     }
 
     void Update()
     {
-        if (Input.pauseKey)
+        if (input.pauseKey)
         {
             TogglePause();
         }
@@ -24,6 +25,16 @@ public class PauseManager : MonoBehaviour
     {
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
-        Time.timeScale = isPaused ? 0f : 1f;
+
+        if (isPaused)
+        {
+            input.SwitchActionMap("UI");
+        }
+        else
+        {
+            input.SwitchActionMap("Player");
+        }
+
+        // Time.timeScale = isPaused ? 0f : 1f;
     }
 }

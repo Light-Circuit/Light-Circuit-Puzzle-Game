@@ -8,11 +8,12 @@ public class MainMenu : MonoBehaviour
     AudioManager manager;
     public GameObject OptionsPanel;
     public GameObject MenuPanel;
-    public SelectedUI selectedUI;
-    public GameObject SelectButton;
+    public GameObject PlayButton;
+    SelectedUI selectedUI;
     void Start()
     {
-      manager=FindAnyObjectByType<AudioManager>();  
+        manager = FindAnyObjectByType<AudioManager>();
+        selectedUI = FindAnyObjectByType<SelectedUI>(); 
     }
     public void PlayGame()
     {
@@ -30,15 +31,15 @@ public class MainMenu : MonoBehaviour
         manager.ButtonSelectedSound();
         OptionsPanel.SetActive(true);
         MenuPanel.SetActive(false);
-        selectedUI.SelectedButton = SelectButton;
-
+       
 
     }
-     public void CloseOptions()
+    public void CloseOptions()
     {
         manager.ButtonSelectedSound();
         OptionsPanel.SetActive(false);
-        MenuPanel.SetActive(true);  
+        MenuPanel.SetActive(true);
+       
     }
 
 }
