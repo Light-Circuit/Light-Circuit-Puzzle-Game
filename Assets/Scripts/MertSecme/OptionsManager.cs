@@ -9,23 +9,31 @@ using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour{
 
-    private float volume = 5f;
+    private float volume;
 
     public TextMeshProUGUI Volumenumber;
     
-    public AudioManager audioManager;
+    private AudioManager audioManager;
 
  void Start()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
-        
+        volume = PlayerPrefs.GetFloat("ses");
     }
 
-void Update()
+    void Update()
     {
-        volume = Math.Clamp(volume,0f,10f);
-         Volumenumber.text = volume.ToString();
-         audioManager.sesValue=volume/10;
+        
+        
+        
+        volume = Math.Clamp(volume, 0f, 10f);
+        Volumenumber.text = volume.ToString();
+        audioManager.sesValue = volume / 10;
+        
+        PlayerPrefs.SetFloat("ses", volume);
+        
+        
+        
     }
     public void AnaMenu()
     {

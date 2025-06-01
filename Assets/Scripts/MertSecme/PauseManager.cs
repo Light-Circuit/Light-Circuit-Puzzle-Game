@@ -26,7 +26,8 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
 
-        
+
         // Time.timeScale = isPaused ? 0f : 1f;
     }
+    
 }

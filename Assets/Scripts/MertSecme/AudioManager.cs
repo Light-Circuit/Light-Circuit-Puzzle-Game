@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; } 
+    // public static AudioManager Instance { get; private set; } 
 
      AudioSource m_AudioSource;
     [SerializeField] private AudioClip BackgroundSound;
@@ -24,17 +25,17 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
        
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        // if (Instance != null && Instance != this)
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
 
         
-        Instance = this;
+        // Instance = this;
 
         
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
        
     }
@@ -43,12 +44,20 @@ public class AudioManager : MonoBehaviour
 {   m_AudioSource=GetComponent<AudioSource>();
     m_AudioSource.clip = BackgroundSound;
     m_AudioSource.loop = true; 
+
+    sesValue = PlayerPrefs.GetFloat("ses");
+    m_AudioSource.volume = sesValue;
+    
      
     m_AudioSource.Play(); 
 }
-    void Update()
-    {
-        m_AudioSource.volume = sesValue;
+  void Update()
+  {
+    
+    m_AudioSource.volume = sesValue;
+    
+
+    
     }
 
 

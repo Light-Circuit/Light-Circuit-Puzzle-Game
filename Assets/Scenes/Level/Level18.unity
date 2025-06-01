@@ -4321,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Name
-      value: PauseMenu
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
@@ -4415,6 +4415,11 @@ PrefabInstance:
 --- !u!224 &2509687969538536934 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
+  m_PrefabInstance: {fileID: 2509687969538536933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2509687969538536935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1022863020605631299, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
   m_PrefabInstance: {fileID: 2509687969538536933}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2509687969538536936 stripped
@@ -4591,6 +4596,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7297231953629664901, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 2509687969538536935}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[0]._stock
       value: 0

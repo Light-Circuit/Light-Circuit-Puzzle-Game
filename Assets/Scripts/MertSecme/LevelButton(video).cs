@@ -6,9 +6,9 @@ using TMPro;
 
 public class LevelButton : MonoBehaviour
 {
-    [SerializeField] public int sceneIndex;
+     public int sceneIndex;
     public void OnButtonClick() {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene($"Level{sceneIndex}");
     }
 
     public void SetIndex(int _index) {
