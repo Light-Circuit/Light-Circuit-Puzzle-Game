@@ -7,6 +7,7 @@ using System.Net.Sockets;
 public class CharacterInteract : MonoBehaviour
 {
     public GameObject x;
+   
     public GameObject OgreticiPanel;
     private AudioManager manager;
     public GameObject panel;

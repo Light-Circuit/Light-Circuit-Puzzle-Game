@@ -26,15 +26,6 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
 
-        if (isPaused)
-        {
-            input.SwitchActionMap("UI");
-        }
-        else
-        {
-            input.SwitchActionMap("Player");
-        }
-
-        // Time.timeScale = isPaused ? 0f : 1f;
+        
     }
 }

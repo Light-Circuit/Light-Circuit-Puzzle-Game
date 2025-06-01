@@ -11,25 +11,27 @@ public class PlayerController : MonoBehaviour
     private InputManager inputManager;
     public float maxX, minX, maxY, minY;
     private bool isMoving;
-
+   public GameObject PauseMenu;
     private Vector2 input;
 
     private Animator animator;
     private Coroutine moveCoroutine; 
     private CharacterInteract characterInteract;
-   
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        inputManager=GetComponent<InputManager>();
-        manager=FindAnyObjectByType<AudioManager>();
-        characterInteract=GetComponent<CharacterInteract>();
+        inputManager = GetComponent<InputManager>();
+        manager = FindAnyObjectByType<AudioManager>();
+        characterInteract = GetComponent<CharacterInteract>();
+        
        
     }
-
+    
     void Update()
-    {
+    {   
         if (characterInteract.isTutorialActive) return;
+        if (PauseMenu.activeSelf) return;
         limitPos();
         PlayerMove();
         

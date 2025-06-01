@@ -1,118 +1,103 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using Player.Input;
 
 public class LevelSelectedUI : MonoBehaviour
 {
-    [Header("UI Referansları")]
-    
-    public GameObject optionsMenu;
-    public GameObject playButton;
-    public GameObject backButton;
+    public List<Button> Keys;
 
-    [Header("Ses Sistemi")]
-    public AudioManager audioManager;
+    private int selectedIndex = 0;
+    public Button selectedObject;
 
-    private PlayerInput playerInput;
-    private EventSystem eventSystem;
+    private InputManager input;
+    private AudioManager manager;
 
-    private string currentControlScheme;
-    private bool mouseMoved = false;
-    private GameObject lastSelected;
+    private Color normalColor = Color.white;
+    private Color selectedColor = Color.yellow;
 
-    private bool previousOptionsActive;
+    // Elle yön eşleşmeleri
+    private Dictionary<int, int> upMap = new();
+    private Dictionary<int, int> downMap = new();
+    private Dictionary<int, int> leftMap = new();
+    private Dictionary<int, int> rightMap = new();
 
     void Awake()
     {
-        eventSystem = EventSystem.current;
-        playerInput = FindAnyObjectByType<PlayerInput>();
+        input = FindAnyObjectByType<InputManager>();
+        manager = FindAnyObjectByType<AudioManager>();
 
-        if (audioManager == null)
-        {
-            audioManager = FindAnyObjectByType<AudioManager>();
-        }
+      
+        downMap[0] = 1;
+        upMap[1] = 0;
+        upMap[2] = 0;
+        rightMap[1] = 2;
+        leftMap[2] = 1;
 
-        if (playerInput != null)
-        {
-            currentControlScheme = playerInput.currentControlScheme;
-            playerInput.onControlsChanged += OnControlsChanged;
-        }
-
-        SelectButton(playButton); 
+        UpdateSelection();
     }
 
     void Update()
     {
-        DetectMouseMovement();
-
-        GameObject current = eventSystem.currentSelectedGameObject;
-
-        if (current != null && current != lastSelected && !mouseMoved)
-        {
-            if (audioManager != null)
-            {
-                audioManager.ButtonSelectedSound();
-            }
-
-            lastSelected = current;
-        }
-
-      
-        if (optionsMenu.activeSelf)
-        {
-            if (current == null || !current.activeInHierarchy)
-            {
-                SelectButton(backButton);
-            }
-        }
-      
-       
+        HandleInput();
+        UpdateSelection();
+        if (input.KeyEnter && selectedObject != null)
+    {
+        selectedObject.onClick.Invoke();
+    }
     }
 
-    void DetectMouseMovement()
+    void HandleInput()
     {
-        if (Mouse.current != null)
-        {
-            if (Mouse.current.delta.ReadValue() != Vector2.zero || Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                if (currentControlScheme != "Keyboard&Mouse")
-                {
-                    currentControlScheme = "Keyboard&Mouse";
-                    SelectButton(playButton); 
-                }
+        int newIndex = selectedIndex;
 
-                mouseMoved = true;
-            }
+        if (input.DownArrowPressed && downMap.ContainsKey(selectedIndex))
+        {
+            manager.PanelSwitc();
+            newIndex = downMap[selectedIndex];
+        }
+        else if (input.UpArrowPressed && upMap.ContainsKey(selectedIndex))
+        {
+            manager.PanelSwitc();
+            newIndex = upMap[selectedIndex];
+        }
+        else if (input.RightArrowPressed && rightMap.ContainsKey(selectedIndex))
+        {
+            manager.PanelSwitc();
+            newIndex = rightMap[selectedIndex];
+        }
+        else if (input.LeftArrowPressed && leftMap.ContainsKey(selectedIndex))
+        {
+            manager.PanelSwitc();
+            newIndex = leftMap[selectedIndex];
+        }
+
+        if (newIndex >= 0 && newIndex < Keys.Count)
+        {
+            selectedIndex = newIndex;
         }
     }
 
-    void OnControlsChanged(PlayerInput input)
+    void UpdateSelection()
     {
-        string newScheme = input.currentControlScheme;
-
-        if (newScheme != currentControlScheme)
+        for (int i = 0; i < Keys.Count; i++)
         {
-            currentControlScheme = newScheme;
-
-            if (currentControlScheme == "Gamepad")
+            if (Keys[i] != null)
             {
-                mouseMoved = false;
-
-                if (optionsMenu.activeSelf)
-                {
-                    SelectButton(backButton);
-                }
-              
+                ColorBlock cb = Keys[i].colors;
+                cb.normalColor = normalColor;
+                Keys[i].colors = cb;
+                Keys[i].transform.localScale = Vector3.one;
             }
         }
-    }
 
-    void SelectButton(GameObject target)
-    {
-        if (target == null || !target.activeInHierarchy) return;
-
-        eventSystem.SetSelectedGameObject(null);
-        eventSystem.SetSelectedGameObject(target);
-        lastSelected = target;
+        if (selectedIndex >= 0 && selectedIndex < Keys.Count && Keys[selectedIndex] != null)
+        {
+            selectedObject = Keys[selectedIndex];
+            ColorBlock selectedCB = selectedObject.colors;
+            selectedCB.normalColor = selectedColor;
+            selectedObject.colors = selectedCB;
+            selectedObject.transform.localScale = Vector3.one * 1.1f;
+        }
     }
 }
