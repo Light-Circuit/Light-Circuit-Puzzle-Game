@@ -2101,6 +2101,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
+--- !u!1 &1095857128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 94984996218240853, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
+  m_PrefabInstance: {fileID: 2509687969538536933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1106853034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2357,6 +2362,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4798303559149028107, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
   m_PrefabInstance: {fileID: 1718259190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1288324366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1022863020605631299, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
+  m_PrefabInstance: {fileID: 2509687969538536933}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1342439377 stripped
 MonoBehaviour:
@@ -4379,11 +4389,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
   m_PrefabInstance: {fileID: 2509687969538536933}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2509687969538536935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
-  m_PrefabInstance: {fileID: 2509687969538536933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2509687969538536936 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 30060666795686285, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
@@ -4514,6 +4519,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4252995039332186011, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
+      propertyPath: OgreticiPanel
+      value: 
+      objectReference: {fileID: 1095857128}
     - target: {fileID: 6999531111740667133, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.58
@@ -4561,7 +4570,7 @@ PrefabInstance:
     - target: {fileID: 7297231953629664901, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: PauseMenu
       value: 
-      objectReference: {fileID: 2509687969538536935}
+      objectReference: {fileID: 1288324366}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[0]._stock
       value: 0
@@ -4588,7 +4597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[6]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[7]._stock
