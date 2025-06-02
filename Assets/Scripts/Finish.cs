@@ -54,7 +54,7 @@ public class Finish : MonoBehaviour {
         //yükleeniyor
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-
+        print(currentSceneIndex);
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
