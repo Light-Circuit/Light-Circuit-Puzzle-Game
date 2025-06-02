@@ -1650,11 +1650,11 @@ PrefabInstance:
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[0]
       value: 
-      objectReference: {fileID: 749909311}
+      objectReference: {fileID: 348022757}
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 197684599}
+      objectReference: {fileID: 749909311}
     - target: {fileID: 3607821811846405358, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.81
