@@ -1295,10 +1295,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3719899303986503718, guid: c38b4af06b79a4808a9bb13dccd01f61, type: 3}
       propertyPath: set.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3719899303986503718, guid: c38b4af06b79a4808a9bb13dccd01f61, type: 3}
       propertyPath: set.Array.data[0]
+      value: 
+      objectReference: {fileID: 1574411054}
+    - target: {fileID: 3719899303986503718, guid: c38b4af06b79a4808a9bb13dccd01f61, type: 3}
+      propertyPath: set.Array.data[1]
       value: 
       objectReference: {fileID: 1574411054}
     - target: {fileID: 8570220045292024652, guid: c38b4af06b79a4808a9bb13dccd01f61, type: 3}

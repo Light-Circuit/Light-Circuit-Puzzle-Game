@@ -348,7 +348,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
---- !u!114 &228623010 stripped
+--- !u!4 &228623011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2001841092149438293, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
+  m_PrefabInstance: {fileID: 228623009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &228623013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
   m_PrefabInstance: {fileID: 228623009}
@@ -359,11 +364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547429faf622741fc9733be071273d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &228623011 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2001841092149438293, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
-  m_PrefabInstance: {fileID: 228623009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &326486813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -553,11 +553,11 @@ PrefabInstance:
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[0]
       value: 
-      objectReference: {fileID: 1704576540}
+      objectReference: {fileID: 1208910283}
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 1704576540}
     - target: {fileID: 4614521635228109439, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: m_Name
       value: InteractCollectSocet (4)
@@ -797,7 +797,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 228623013}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (29)
@@ -1529,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 228623013}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (16)
@@ -1855,7 +1855,7 @@ PrefabInstance:
     - target: {fileID: 692944285570962763, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 228623013}
     - target: {fileID: 4798303559149028107, guid: 0db8d8e4724834f65b71014b8cb62187, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.4
@@ -2506,6 +2506,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2001841092149438293, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
   m_PrefabInstance: {fileID: 1231787807}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1208910283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
+  m_PrefabInstance: {fileID: 1231787807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547429faf622741fc9733be071273d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1231787807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2777,7 +2788,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 228623013}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (28)
@@ -3221,7 +3232,7 @@ PrefabInstance:
     - target: {fileID: 3640957180645091446, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: set
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1763046959}
     - target: {fileID: 8187455807281568915, guid: b742d974259b2497cbda413b95673775, type: 3}
       propertyPath: m_Name
       value: Kablo (33)
@@ -3349,7 +3360,7 @@ PrefabInstance:
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1662590967}
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[1]
       value: 
@@ -3631,7 +3642,7 @@ PrefabInstance:
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 228623010}
+      objectReference: {fileID: 228623013}
     - target: {fileID: 4614521635228109439, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: m_Name
       value: InteractCollectSocet (6)
