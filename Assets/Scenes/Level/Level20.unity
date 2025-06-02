@@ -3686,11 +3686,11 @@ PrefabInstance:
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[0]
       value: 
-      objectReference: {fileID: 276505818}
+      objectReference: {fileID: 295507682}
     - target: {fileID: 2356159452667437897, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 276505818}
+      objectReference: {fileID: 295507682}
     - target: {fileID: 3068003803296252225, guid: 290454abec84f4b7fbc7744ba4963108, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5667,35 +5667,35 @@ PrefabInstance:
       objectReference: {fileID: 2509687969538536937}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[0]._stock
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[1]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[2]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[3]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[4]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[5]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[6]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470283538259339670, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: stocks.Array.data[7]._stock
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879204142837787504, guid: a7baf7bcc41a34860a8e984ff5890fc6, type: 3}
       propertyPath: m_SortingOrder
