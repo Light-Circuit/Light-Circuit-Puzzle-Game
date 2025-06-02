@@ -43,9 +43,9 @@ public class AudioManager : MonoBehaviour
     void Start()
 {   m_AudioSource=GetComponent<AudioSource>();
     m_AudioSource.clip = BackgroundSound;
-    m_AudioSource.loop = true; 
-
+    m_AudioSource.loop = true;
     sesValue = PlayerPrefs.GetFloat("ses");
+    // PlayerPrefs.SetFloat("ses", sesValue);
     m_AudioSource.volume = sesValue;
     
      
