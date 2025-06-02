@@ -353,17 +353,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2001841092149438293, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
   m_PrefabInstance: {fileID: 228623009}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &228623013 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
-  m_PrefabInstance: {fileID: 228623009}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547429faf622741fc9733be071273d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &326486813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3642,7 +3631,7 @@ PrefabInstance:
     - target: {fileID: 3496218177209775330, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: set.Array.data[1]
       value: 
-      objectReference: {fileID: 228623013}
+      objectReference: {fileID: 1208910283}
     - target: {fileID: 4614521635228109439, guid: c615b0c10eeda4a2d91c3efb3d8fdc24, type: 3}
       propertyPath: m_Name
       value: InteractCollectSocet (6)
@@ -4081,7 +4070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784044333547979543, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871386743399955268, guid: ea7e3c79fb765478ca0b7f15f6eaf1e8, type: 3}
       propertyPath: m_Pivot.x
