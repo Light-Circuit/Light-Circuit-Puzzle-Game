@@ -82,7 +82,7 @@ void PlayerMove()
         manager.WalkSound();
         while((targetPos-transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed*Time.deltaTime);
+transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed*Time.deltaTime);
             yield return null;
 
         }

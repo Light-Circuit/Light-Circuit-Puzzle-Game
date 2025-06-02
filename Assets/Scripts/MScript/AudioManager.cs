@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
     m_AudioSource.clip = BackgroundSound;
     m_AudioSource.loop = true;
     sesValue = PlayerPrefs.GetFloat("ses");
-    // PlayerPrefs.SetFloat("ses", sesValue);
+    PlayerPrefs.SetFloat("ses", PlayerPrefs.GetFloat("ses"));
     m_AudioSource.volume = sesValue;
     
      
