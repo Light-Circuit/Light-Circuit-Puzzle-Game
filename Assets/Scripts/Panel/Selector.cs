@@ -12,21 +12,26 @@ public class Selector : MonoBehaviour
     public GameObject selectedObject;
     private InputManager input;
     private AudioManager manager;
+   
+    private PlayerController player;
 
     void Awake()
     {
         input = FindAnyObjectByType<InputManager>();
         manager = FindAnyObjectByType<AudioManager>();
         
-        // Eğer satır sayısı manuel değilse, otomatik hesapla
+       
         if (rows <= 0)
         {
             rows = Mathf.CeilToInt((float)Keys.Count / columns);
         }
     }
-
-    void Update()
+    void Start()
     {
+        player = FindAnyObjectByType<PlayerController>();
+    }
+    void Update()
+    { if (player.PauseMenu.activeSelf) return;
         HandleInput();
         UpdateSelection();
     }
@@ -84,7 +89,7 @@ public class Selector : MonoBehaviour
         if (selectedIndex >= 0 && selectedIndex < Keys.Count)
         {
             var selectedObj = Keys[selectedIndex];
-            selectedObj.GetComponent<SpriteRenderer>().color = Color.yellow;
+            selectedObj.GetComponent<SpriteRenderer>().color = Color.red;
             selectedObject = selectedObj;
         }
     }

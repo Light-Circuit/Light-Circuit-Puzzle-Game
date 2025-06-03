@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainSelector
   - SecondSelector
+  - pauseMenu
   layers:
   - Default
   - TransparentFX

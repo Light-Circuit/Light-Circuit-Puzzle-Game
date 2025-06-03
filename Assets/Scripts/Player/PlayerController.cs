@@ -18,16 +18,17 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Coroutine moveCoroutine; 
     private CharacterInteract characterInteract;
-   
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        inputManager=GetComponent<InputManager>();
-        manager=FindAnyObjectByType<AudioManager>();
-        characterInteract=GetComponent<CharacterInteract>();
+        inputManager = GetComponent<InputManager>();
+        manager = FindAnyObjectByType<AudioManager>();
+        characterInteract = GetComponent<CharacterInteract>();
+       
        
     }
-
+    
     void Update()
     {
         if (characterInteract.isTutorialActive) return;

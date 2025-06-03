@@ -16,7 +16,9 @@ public class CharacterInteract : MonoBehaviour
     private IBaseSocet SocetInteract;
     private EnvanterSystem envanter;
     private bool canInteract = false;
-    [HideInInspector]public bool isTutorialActive = false;
+   
+    private PlayerController player;
+    [HideInInspector] public bool isTutorialActive = false;
     
 
     [HideInInspector] public Tutorial _tutorials;
@@ -26,14 +28,17 @@ public class CharacterInteract : MonoBehaviour
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
+       
     }
 
     void Start()
     {
         envanter = GetComponent<EnvanterSystem>();
         manager = FindAnyObjectByType<AudioManager>();
+        player = GetComponent<PlayerController>();
+        
     }
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<Tutorial>(out var tutorial))
@@ -112,7 +117,7 @@ public class CharacterInteract : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   if (player.PauseMenu.activeSelf) return;
         if (isTutorialActive && inputManager.KeyE)
         {
             OgreticiPanel.SetActive(false);

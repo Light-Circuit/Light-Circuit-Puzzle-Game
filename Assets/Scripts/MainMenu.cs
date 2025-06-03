@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     AudioManager manager;
     public GameObject OptionsPanel;
     public GameObject MenuPanel;
-    public GameObject PlayButton;
+   
     SelectedUI selectedUI;
     void Start()
     {

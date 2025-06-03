@@ -1099,18 +1099,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Volumenumber: {fileID: 1128840153}
-  audioManager: {fileID: 1644830092}
---- !u!114 &1644830092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5923554518649876238, guid: b2e0ed2fe45b8487087452b37013e928, type: 3}
-  m_PrefabInstance: {fileID: 908539449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5200e4bb866974bbe45cf7a1eb61be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &89029175385781433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2564,7 +2552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b36e582d66aff544cabbf0ab2dfa90c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 536d0fe0185954401baa80ee9628df6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

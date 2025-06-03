@@ -1,54 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonsHandler : MonoBehaviour
 {
     [SerializeField] Button[] levelButtons;
+    [SerializeField] Sprite kilit;           
+    [SerializeField] Sprite acik;             
+
     string numberOfLevelsUnlocked = "numberOfLevelsUnlocked";
     int unlockedLevels;
     int oldUnlockedLevels;
 
-
     private void Start()
     {
         if (!PlayerPrefs.HasKey(numberOfLevelsUnlocked))
-        {   
+        {
             PlayerPrefs.SetInt(numberOfLevelsUnlocked, 1);
         }
+
         unlockedLevels = PlayerPrefs.GetInt(numberOfLevelsUnlocked);
         oldUnlockedLevels = unlockedLevels;
 
-        for (int i = 0; i < levelButtons.Length; i++)
-        {
-            if (i < unlockedLevels)
-            {
-                levelButtons[i].interactable = true;
-            }
-            else
-            {
-                levelButtons[i].interactable = false;
-            }
-        }
+        ApplyUnlockStatus();
     }
 
     private void Update()
     {
         unlockedLevels = PlayerPrefs.GetInt(numberOfLevelsUnlocked);
-        if (oldUnlockedLevels != unlockedLevels) {
-            for (int i = 0; i < levelButtons.Length; i++)
+        if (oldUnlockedLevels != unlockedLevels)
+        {
+            ApplyUnlockStatus();
+            oldUnlockedLevels = unlockedLevels;
+        }
+    }
+
+    private void ApplyUnlockStatus()
+    {
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            LevelButton lb = levelButtons[i].GetComponent<LevelButton>();
+            if (lb != null)
             {
-                if (i < unlockedLevels)
+                bool isLevelUnlocked = (i < unlockedLevels);
+                lb.isUnlocked = isLevelUnlocked;
+
+               
+                levelButtons[i].image.sprite = isLevelUnlocked ? acik : kilit;
+                levelButtons[i].transform.GetChild(0).gameObject.SetActive(isLevelUnlocked);
+
+               
+                Text text = levelButtons[i].GetComponentInChildren<Text>();
+                if (text != null)
                 {
-                    levelButtons[i].interactable = true;
-                }
-                else
-                {
-                    levelButtons[i].interactable = false;
+                    text.color = isLevelUnlocked ? Color.white : Color.gray;
                 }
             }
-            oldUnlockedLevels = unlockedLevels;
         }
     }
 }

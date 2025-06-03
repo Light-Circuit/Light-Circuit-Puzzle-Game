@@ -108,10 +108,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
-  maxX: 17.43
-  minX: -16.91
-  maxY: 9.931374
-  minY: -3.64
+  maxX: 17.1
+  minX: -15.7
+  maxY: 9.5
+  minY: -3.1
+  PauseMenu: {fileID: 0}
 --- !u!95 &762246659735095233
 Animator:
   serializedVersion: 5
@@ -437,6 +438,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3308877408992530201, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab40e790bf53b46a09765dac8b1fd043, type: 3}
+    - target: {fileID: 3308877408992530201, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
@@ -451,6 +456,10 @@ PrefabInstance:
     - target: {fileID: 3714079215804701094, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_SortingOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801383928536085000, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3828645923293772374, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_Name
@@ -479,6 +488,10 @@ PrefabInstance:
     - target: {fileID: 4396982499251588463, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488896769451788705, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4527283898744690413, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_Sprite
@@ -802,6 +815,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3308877408992530201, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab40e790bf53b46a09765dac8b1fd043, type: 3}
+    - target: {fileID: 3308877408992530201, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
@@ -815,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3801383928536085000, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3828645923293772374, guid: 8d4266e0ccb0647879cb96fdfde2d32d, type: 3}
       propertyPath: m_Name
