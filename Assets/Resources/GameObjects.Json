@@ -63,6 +63,11 @@
       "id": 12,
       "name": "Soket",
       "description": "toplama soket, eksik kapıları bu soketlerden toplayabilirsin."
+    },
+    {
+      "id": 13,
+      "name": "Bilgi",
+      "description": " Pause menüyü açmak için P tuşuna basın"
     }
   ]
 }
